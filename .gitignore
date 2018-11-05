@@ -1,0 +1,15 @@
+**/.DS_Store
+
+#忽略所有扩展名为.tmp的文件
+*.tmp
+
+#忽略~$开头的文件
+~$*.*
+
+#忽略node.js依赖的包
+node_modules
+
+**/node_modules/
+
+#忽略视频
+*.mp4
