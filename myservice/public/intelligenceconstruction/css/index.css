@@ -1,0 +1,54 @@
+.cm-logo {
+    background: url(../images/logo.svg) no-repeat 0px center transparent;
+}
+
+#cm-header .cm-navbar {
+    border-bottom: 1px solid #3d3e49;
+}
+
+.container-fluid .panel {
+    width: 98%;
+    height: 47%;
+    background-color: #191a2d;
+}
+.panel {
+    border-radius: 5px;
+}
+.panel, .panel-heading {
+    border:0px!important;
+   
+}
+.panel-heading {
+    background-color: #1f2039!important;
+}
+
+.panel-body {
+    background-color: #191a2d;
+    color:#fff;
+}
+.panel-body ul li {
+    list-style-type: none;
+}
+
+.row > div{height:942px;}
+
+.col-sm-4:nth-child(2) ul li{
+    margin-top: 10px;
+}
+.data-info span{
+    display: inline-block;
+}
+.data-info span:nth-child(1) {
+    width: 50px;
+}
+.data-info span:nth-child(2) {
+    width: 80px;
+    text-align: right;
+}
+.prj-info ul, .data-info ul {
+    padding: 0px;
+}
+
+.cm-submenu > ul > li > a {
+    padding: 0px 115px 0px 50px;
+}
