@@ -2,7 +2,9 @@ $(function(){
 
     var btn_cc = 'btn-primary';
     var navbar_cc = 'cm-navbar-primary';
-	var pageArr = ["html/home.html", "", "html/projectprogress4global.html", "html/projectprogress4milestone.html"]
+	var pageArr = ["html/home.html", "", "html/projectprogress4global.html", "html/projectprogress4milestone.html",
+					"html/projectprogress4plan.html","html/projectprogress4comparison.html","",
+					"html/quality4problemsummarizing.html"];
 
 
 	$("#cm-menu-scroller a").on("click", function(event){
