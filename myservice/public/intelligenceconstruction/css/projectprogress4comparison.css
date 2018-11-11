@@ -5,3 +5,8 @@
 .container-fluid > .row:first-child, .container-fluid > .panel:first-child {
      margin-top: 0px;
 }
+
+.comparison-title {
+    color:#ffffff;
+    font-size: 19px;
+}

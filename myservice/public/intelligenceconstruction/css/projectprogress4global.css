@@ -1,0 +1,57 @@
+.table > thead > tr > th {
+    text-align : center;
+    color : #4e505f;
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.panel-body {
+    padding: 10px;
+}
+
+.task-info > h5 {
+    color : #4e505f;
+}
+
+.global-progress-title {
+    font-size: 18px;
+    color:#ffffff;
+}
+
+.global-progress-title .text-left{
+    float:left;
+}
+.global-progress-title .text-right{
+    width:344px;
+    float:right;
+}
+.global-progress-title .text-right > button {
+    /* background-size: 100% auto;
+    background-position: center center; */
+    width:90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
+
+.qry-task {
+    background: #1f2039;
+    border-radius: 20px;
+    border: 1px #8e8f9b solid;
+    padding-left: 3%;
+    height: 32px;
+}
+
+.icon-search {
+    position: absolute;
+    right: 25px;
+    top:15px;
+    z-index:5;
+    background-image: url(../img/sf/search.svg); /*引入图片图片*/
+    background-repeat: no-repeat; /*设置图片不重复*/
+    background-position: 0px 0px; /*图片显示的位置*/
+    width: 20px; /*设置图片显示的宽*/
+    height: 20px; /*图片显示的高*/
+}
