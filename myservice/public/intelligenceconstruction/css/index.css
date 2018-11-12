@@ -30,8 +30,6 @@
     list-style-type: none;
 }
 
-.row > div{height:942px;}
-
 .col-sm-4:nth-child(2) ul li{
     margin-top: 10px;
 }

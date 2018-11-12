@@ -6844,7 +6844,7 @@ body.cm-3-navbar #global {
 #global {
   position: relative;
   min-height: 100%;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 header {
   position: fixed;

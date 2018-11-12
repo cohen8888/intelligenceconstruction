@@ -5,3 +5,12 @@
 .container-fluid > .row:first-child, .container-fluid > .panel:first-child {
      margin-top: 0px;
 }
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.milestone-content {
+    margin-left: 10px;
+}
