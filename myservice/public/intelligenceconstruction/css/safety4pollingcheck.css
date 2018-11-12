@@ -1,0 +1,28 @@
+.safty-polling-check-title {
+    color:#ffffff;
+    font-size: 18px;
+    padding: 17px 17px;
+    font-weight:normal;
+}
+
+.col-sm-8 .panel-body {
+    padding: 0px;
+}
+
+.btn-normal{
+    background: #1f2039;
+    border-radius: 20px;
+    padding: 0px 15px;
+    border: 1px #8e8f9b solid;
+    height: 32px;
+    font-size: 14px
+  }
+  
+.btn-focus {
+    /* width: 150px; */
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png');
+}
+
