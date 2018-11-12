@@ -6,6 +6,42 @@
 }
 
 
-.panel-body {
+.col-sm-8 .panel-body {
     padding: 0px;
+}
+
+.row > .col-sm-4 > .labourdev-person-info > .panel-body > .table > tbody > tr > td{
+    padding:21px 5px;
+}
+.table tr th {
+    color: #515362;
+    text-align: center;
+}
+
+.labour-person-basic-detail ul {
+    list-style-type: none;
+    color:#ffffff;
+    /* padding: 10px 20px; */
+    font-size: 19px;
+    padding:0px 17px;
+    font-weight: normal;
+}
+.labour-person-basic-detail > ul > li{
+    float: left;
+    margin-right: 5%;
+}
+.labour-person-pie-tab ul {
+    list-style-type: none;
+    color: #515362; 
+    font-size: 14px;
+    padding:0px 17px;
+}
+
+.labour-person-pie-tab > ul > li:nth-child(1){
+    float: left;
+
+}
+.labour-person-pie-tab > ul > li:nth-child(2){
+    float: right;
+    padding-right: 10px;
 }
