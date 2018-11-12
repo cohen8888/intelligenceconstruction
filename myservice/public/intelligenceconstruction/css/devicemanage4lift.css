@@ -1,0 +1,14 @@
+.dev-manage-lift-title {
+    color:#ffffff;
+    font-size: 18px;
+    padding: 17px 17px;
+    font-weight:normal;
+}
+.panel-body {
+    padding: 0px;
+}
+
+.table tr th {
+    color: #515362;
+    text-align: center;
+}

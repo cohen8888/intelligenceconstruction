@@ -6,3 +6,8 @@
 .panel {
     padding-left: 10px;
 }
+
+.table tr th {
+    color: #515362;
+    text-align: center;
+}
