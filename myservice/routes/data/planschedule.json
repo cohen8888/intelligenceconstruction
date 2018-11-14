@@ -1,0 +1,19 @@
+{
+    "projectInfos":[
+        {
+            "taskName":"教学楼施工",
+            "duration":"332个工作日",
+            "startDate":"2018年08月01日"
+        },
+        {
+            "taskName":"教学楼1层主体结构",
+            "duration":"10个工作日",
+            "startDate":"2018年10月16日"
+        },
+        {
+            "taskName":"教学楼2层主体结构",
+            "duration":"30个工作日",
+            "startDate":"2018年10月17日"
+        }
+    ]
+}

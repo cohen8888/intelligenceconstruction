@@ -25,7 +25,6 @@ $(function(){
 		// }
 
 		if(pageArr[$("#cm-menu-scroller a").index(e.target)] != ''){
-			console.log($("#cm-menu-scroller a").index(e.target))
 			$("#global .container-fluid").load(pageArr[$("#cm-menu-scroller a").index(e.target)]);
 		}
 		

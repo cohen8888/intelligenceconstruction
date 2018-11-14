@@ -1,0 +1,17 @@
+{
+    "qualityQuestionSummarizing":{
+        "noRectifyReformProblem":12,
+        "overNoRectifyReformProblem":5,
+        "otherProblem":69
+    },
+    "qualityProblemClassify":{
+        "rebar":3,
+        "foundation":2,
+        "concrete":3,
+        "steelStructure":7,
+        "template":3,
+        "curtain":2,
+        "buildingWall":3,
+        "other":7
+    }
+}

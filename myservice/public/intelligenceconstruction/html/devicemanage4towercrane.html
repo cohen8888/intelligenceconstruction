@@ -2,21 +2,50 @@
 <link rel="stylesheet" href="css/devicemanage4towercrane.css">
 <div class="row">
 	<div class="col-sm-8">
-        <div class="panel-heading dev-manage-title">
+        <div class="panel-heading title">
 			<div class="text-left ">塔吊</div>
 		</div>
         <div class="panel-body">
-            <img src="images/devmanage_main.png" style="width: 100%;height: 100%;" />
+			<img src="images/devmanage_main.png" style="width: 100%;height: 100%;" />
+			<div class="popup-message">
+				<ul>
+					<li class="popup-title">基本信息</li>
+					<li><span>名称：</span><span>塔吊2</span></li>
+					<li><span>型号/规格：</span><span>1036</span></li>
+					<li><span>厂家：</span><span>——</span></li>
+					<li><span>联系人：</span><span>乔工</span></li>
+					<li><span>联系电话：</span><span>13912345678</span></li>
+					<li class="popup-title">巡检记录</li>
+					<li><span>检查时间：</span><span>2018年11月02日 14:20</span></li>
+					<li><span>检查人：</span><span>乔工</span></li>
+				</ul>
+			</div>
         </div>
 	</div>
 	<div class="col-sm-4">
-		<div class="panel panel-default prj-info">
-			<div class="panel-heading dev-manage-title">
+		<div class="panel panel-default tower-crane-info">
+			<div class="panel-heading title">
 				<div class="text-left">基本信息：</div>
 			</div>
 			<div class="panel-body">
-                <img src="images/devmanage_top.png" style="width: 100%;height: 100%;" />
+				<img src="images/devmanage_top.png" style="width: 100%;height: 100%;" />
+				
+			</div>
+			<div class="panel-body tower-crane-table">
+				<table class="table table-bordered table-hover">
+					<caption></caption>
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>型号/规格</th>
+							<th>厂家</th>
+							<th>联系人</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="js/main/devicemanage4towercrane.js"></script>

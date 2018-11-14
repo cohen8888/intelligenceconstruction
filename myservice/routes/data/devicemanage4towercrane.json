@@ -1,0 +1,52 @@
+{
+    "towerCrane":{
+
+    },
+    "towerCraneInfo":[
+        {
+            "name":"塔吊1",
+            "model":"1036",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月02日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"塔吊2",
+            "model":"1037",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月12日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"塔吊3",
+            "model":"1033",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月01日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"塔吊4",
+            "model":"1036",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月06日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"塔吊5",
+            "model":"1036",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月12日 14:20",
+            "checkUser":"乔工"
+        }
+    ]
+}

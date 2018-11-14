@@ -1,0 +1,48 @@
+{
+    "globalprogress":[
+        {
+            "taskName":"施工准备阶段",
+            "projectPeriod":"31个工作日",
+            "startDatetime":"2018年7月1日 8:00",
+            "completeDate":"2018年7月1日 17:00"
+        },
+        {
+            "taskName":"施工准备阶段",
+            "projectPeriod":"31个工作日",
+            "startDatetime":"2018年7月1日 8:00",
+            "completeDate":"2018年7月1日 17:00"
+        },
+        {
+            "taskName":"施工准备阶段",
+            "projectPeriod":"31个工作日",
+            "startDatetime":"2018年7月1日 8:00",
+            "completeDate":"2018年7月1日 17:00"
+        },
+        {
+            "taskName":"施工准备阶段",
+            "projectPeriod":"31个工作日",
+            "startDatetime":"2018年7月1日 8:00",
+            "completeDate":"2018年7月1日 17:00"
+        }
+    ],
+    "taskInfo":[
+        {
+            "orderNo":"01",
+            "taskName":"实训楼",
+            "globalPeriod":"90天",
+            "completePeriod":"30天"
+        },
+        {
+            "orderNo":"02",
+            "taskName":"综合楼",
+            "globalPeriod":"90天",
+            "completePeriod":"30天"
+        },
+        {
+            "orderNo":"03",
+            "taskName":"学员宿舍楼",
+            "globalPeriod":"90天",
+            "completePeriod":"30天"
+        }
+    ]
+}

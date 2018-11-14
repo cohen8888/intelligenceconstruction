@@ -25,4 +25,17 @@
     background-repeat: no-repeat;
     background-image: url('../images/btn_bg.png');
 }
-
+.safetydev-pollingcheck-problem {
+    display:none;
+}
+.safetydev-pollingcheck-problem-info .row {
+    margin: 20px 28px 0px 15px;
+    padding: 6px 4px 7px 5px; 
+    border: 1px #7e7f89 solid;
+}
+.safetydev-pollingcheck-problem-info div .info-img{
+    float:left;
+}
+.safetydev-pollingcheck-problem-info div .info-msg{
+    float:left;
+}

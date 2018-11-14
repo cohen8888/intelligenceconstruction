@@ -1,0 +1,52 @@
+{
+    "lift":{
+
+    },
+    "liftInfo":[
+        {
+            "name":"升降机1",
+            "model":"1033",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年10月02日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"升降机2",
+            "model":"1033",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年10月12日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"升降机3",
+            "model":"1034",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年10月21日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"升降机4",
+            "model":"1034",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月06日 14:20",
+            "checkUser":"乔工"
+        },
+        {
+            "name":"升降机5",
+            "model":"1136",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月12日 14:20",
+            "checkUser":"乔工"
+        }
+    ]
+}

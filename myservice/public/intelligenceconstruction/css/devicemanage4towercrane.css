@@ -1,10 +1,42 @@
-.dev-manage-title {
+.title {
     color:#ffffff;
     font-size: 18px;
     padding: 17px 17px;
     font-weight:normal;
 }
 
-.panel-body {
+.col-sm-8 .panel-body {
     padding: 0px;
+}
+
+
+.table tr th {
+    color: #515362;
+    text-align: center;
+}
+
+.table > tbody > tr > td{
+    padding:21px 5px;
+}
+
+.popup-message {
+    position: absolute;
+    right: 49px;
+    top:109px;
+    background: #1e242d;
+    opacity: 0.7;
+    width:364px;
+    height:281px;
+    z-index: 100;
+    border-radius: 8px;
+    font-size: 16px;
+    display: none;
+}
+
+.popup-message .popup-title {
+    font-size: 18px;
+}
+
+.popup-message .popup-title{
+    padding: 14px 0px;
 }

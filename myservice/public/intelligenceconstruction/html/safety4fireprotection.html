@@ -1,24 +1,105 @@
-<!-- 质量管理——消防管理 -->
+<!-- 安全管理——消防管理 -->
 <link rel="stylesheet" href="css/safety4fireprotection.css">
-<div class="row">
+
+<div class="row fire-fighting-device">
 	<div class="col-sm-8">
-        <div class="panel-heading safety-fireprotection-title">
-			<button>消防设施</button>
-			<button>重点部位</button>
-			<button>安全疏散</button>
+        <div class="panel-heading title">
+			<div class="text-left">
+				<button class="btn-normal btn-focus">消防设施</button>
+				<button class="btn-normal">重点部位</button>
+				<button class="btn-normal">安全疏散</button>
+			</div>
 		</div>
         <div class="panel-body">
             <img src="images/safety_fireprotection.jpg" style="width: 100%;height: 100%;" />
         </div>
 	</div>
 	<div class="col-sm-4">
-		<div class="panel panel-default prj-info">
-			<div class="panel-heading safety-fireprotection-title">
-				<div class="text-left">视频监控：</div>
+		<div class="panel panel-default safety-fireprotection-info">
+			<div class="panel-heading title">
+				<div class="text-left">消防设备信息</div>
 			</div>
 			<div class="panel-body">
-                <img src="images/safety_fireprotectionpie.png" style="width: 100%;height: 100%;" />
+                <div id="fire-fighting-device-manage-chart" style="width: 400px;height: 380px;" class="center-block"></div>
+			</div>
+			<div class="panel-body fire-fighting-device-manage-table">
+				<table class="table table-bordered table-hover">
+					<caption></caption>
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>型号/规格</th>
+							<th>厂家</th>
+							<th>联系人</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 </div>
+<!-- 重点部位 -->
+<div class="row key-position">
+		<div class="col-sm-8">
+			<div class="panel-heading title">
+				<div class="text-left">
+					<button class="btn-normal">消防设施</button>
+					<button class="btn-normal btn-focus">重点部位</button>
+					<button class="btn-normal">安全疏散</button>
+				</div>
+			</div>
+			<div class="panel-body">
+				<img src="images/key-positoin.png" style="width: 100%;height: 100%;" />
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-default key-position-info">
+				<div class="panel-heading title">
+					<div class="text-left">重点部位信息</div>
+				</div>
+				<div class="panel-body">
+					<div id="key-position-chart" style="width: 400px;height: 380px;" class="center-block"></div>
+				</div>
+				<div class="panel-body key-position-table">
+					<table class="table table-bordered table-hover">
+						<caption></caption>
+						<thead>
+							<tr>
+								<th>名称</th>
+								<th>UniqueId</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 安全疏散 -->
+<div class="row safety-evacuate">
+	<div class="col-sm-8">
+		<div class="panel-heading title">
+			<div class="text-left">
+				<button class="btn-normal">消防设施</button>
+				<button class="btn-normal">重点部位</button>
+				<button class="btn-normal btn-focus">安全疏散</button>
+			</div>
+		</div>
+		<div class="panel-body">
+			<img src="images/safety_mainbg.png" style="width: 100%;height: 100%;" />
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-default safety-evacuate-info">
+			<div class="panel-heading title">
+				<div class="text-left">安全疏散</div>
+			</div>
+			<div class="panel-body">
+				<div id="safety-evacuate-chart" style="width: 400px;height: 380px;" class="center-block"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/lib/echarts.js"></script>
+<script src="js/main/safety4fireprotection.js"></script>

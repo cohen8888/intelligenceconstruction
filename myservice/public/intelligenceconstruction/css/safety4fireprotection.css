@@ -1,9 +1,42 @@
-.safety-fireprotection-title{
+.title{
     color:#ffffff;
     font-size: 18px;
     padding: 17px 17px;
     font-weight:normal;
 }
-.panel-body {
+.col-sm-8 .panel-body {
     padding: 0px;
+}
+
+.btn-normal{
+    background: #1f2039;
+    border-radius: 20px;
+    padding: 0px 15px;
+    border: 1px #8e8f9b solid;
+    height: 32px;
+    font-size: 14px
+  }
+  
+.btn-focus {
+    /* width: 150px; */
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png');
+}
+
+.table tr th {
+    color: #515362;
+    text-align: center;
+}
+.table > tbody > tr > td{
+    padding:21px 5px;
+}
+
+.key-position {
+    display: none;
+}
+
+.safety-evacuate {
+    display: none;
 }
