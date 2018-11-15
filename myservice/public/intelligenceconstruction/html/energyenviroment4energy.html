@@ -1,15 +1,55 @@
 <!-- 能源环境管理——能源管理 -->
+<style>
+    .power-chart, .water-chart {
+        width: 549px;
+        height: 362px;
+    }
+</style>
+<link rel="stylesheet" href="css/energyenviroment4energy.css">
 <div class="row">
     <div class="panel panel-default">
-        <div class="panel-heading">能源管理</div>
-        <div class="panel-body">
-            <div id="d1-c5" style="height:320px"></div>
+        <div class="panel-heading title">
+            <div class="text-left">能源管理</div>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">C3 Splines</div>
-        <div class="panel-body">
-            <div id="d1-c4" style="height:320px"></div>
+        <div class="panel-body energy-manage">
+            <div class="panel panel-default power-consumption">
+                <div class="panel-heading">
+                    <div class="text-left"><span><img src="images/energy_power.png" alt=""></span><span>耗电量</span></div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body col-sm-4">
+                            <div class="power-chart"></div>
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <div class="power-chart"></div>
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <div class="power-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default water-consumption">
+                <div class="panel-heading">
+                    <div class="text-left"><span><img src="images/energy_water.png" alt=""></span><span>耗水量</span></div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body col-sm-4">
+                            <div class="water-chart"></div>
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <div class="water-chart"></div>
+                        </div>
+                        <div class="panel-body col-sm-4">
+                            <div class="water-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script src="js/lib/echarts.js"></script>
+<script src="js/main/energyenviroment4energy.js"></script>

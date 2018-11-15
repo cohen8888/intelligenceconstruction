@@ -1,0 +1,43 @@
+{
+    "powerConsemble":{
+        "ensemblePowerConsemble":[
+            {
+                "year":"2018",
+                "month":["1", "2", "3", "4", "5", "6", "7","8","9", "10", "11", "12"],
+                "data":[820, 932, 901, 934, 1290, 1330, 1320,620,50,60,1000,1100]
+            }
+        ],
+        "powerConsembleClassify":{
+            "illumination":40,
+            "airConditioner":28,
+            "dynamicElectricity":25,
+            "other":7
+        },
+        "powerConsembleClassifyItem":{
+            "civil":45,
+            "curtainWall":10,
+            "install":15,
+            "refinedDecoration":30
+        }
+    },
+    "waterConsemble":{
+        "ensembleWaterConsemble":[
+            {
+                "year":"2018",
+                "month":["1", "2", "3", "4", "5", "6", "7","8","9", "10", "11", "12"],
+                "data":[12, 43, 54, 44, 122, 231, 123,76,50,60,342,432]
+            }
+        ],
+        "waterConsembleClassify":{
+            "livingQuarters":45,
+            "constructionArea":25,
+            "officeArea":30
+        },
+        "waterConsembleClassifyItem":{
+            "civil":45,
+            "curtainWall":10,
+            "install":15,
+            "refinedDecoration":30
+        }
+    }
+}

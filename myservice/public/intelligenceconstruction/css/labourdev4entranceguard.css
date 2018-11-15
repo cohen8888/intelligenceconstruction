@@ -16,14 +16,67 @@
     color: #515362;
     text-align: center;
 }
+.labour-entranceguard-info > .labour-entranceguard-detail, .labour-entranceguard-info > .labour-entranceguard-tab {
+    background-color: #191a2d!important;
+}
+
+.labour-entranceguard-detail > ul {
+    list-style-type: none;
+    color:#ffffff;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.labour-entranceguard-detail ul li{
+    float: left;
+    margin-right: 5%;
+}
+
+
+.labour-entranceguard-tab ul {
+    list-style-type: none;
+    color: #515362; 
+    font-size: 14px;
+    padding:0px 17px;
+}
+
+.labour-entranceguard-tab > ul > li:nth-child(1){
+    float: left;
+
+}
+.labour-entranceguard-tab > ul > li:nth-child(2){
+    float: right;
+    padding-right: 10px;
+}
 
 .labour-entranceguard-detail ul {
     list-style-type: none;
     color:#ffffff;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font-size: 19px;
+    padding:0px 17px;
+    font-weight: normal;
 }
-.labour-entranceguard-detail > ul > li{
-    float: left;
-    margin-right: 10%;
+
+.btn-normal{
+    vertical-align:middle;
+    color:#ffffff;
+    background: #1f2039;
+    border-radius: 1px;
+    padding: 0px 12px;
+    border: 1px #4d97ab solid;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.btn-focus {
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align:middle;
+    color:#ffffff;
+    height: 20px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url(../images/labourdev_btn_bg.png);
 }

@@ -1,0 +1,44 @@
+{
+    "globalInfo":{
+        "grandTotalWorker":400,
+        "currentWorker":200
+    },
+    "workerInfos":[
+        {
+            "workNo":"w00011",
+            "name":"张大穆",
+            "gender":"男",
+            "company":"刘记建筑公司",
+            "imgUrl":""
+        },
+        {
+            "workNo":"w00011",
+            "name":"李慕深",
+            "gender":"男",
+            "company":"刘记建筑公司",
+            "imgUrl":""
+        },
+        {
+            "workNo":"w00011",
+            "name":"王适才",
+            "gender":"男",
+            "company":"李蟒记建筑公司",
+            "imgUrl":""
+        },
+        {
+            "workNo":"w00011",
+            "name":"张大穆",
+            "gender":"男",
+            "company":"刘记建筑公司",
+            "imgUrl":""
+        },
+        {
+            "workNo":"w00011",
+            "name":"张大穆",
+            "gender":"男",
+            "company":"刘记建筑公司",
+            "imgUrl":""
+        }
+    ]
+
+}

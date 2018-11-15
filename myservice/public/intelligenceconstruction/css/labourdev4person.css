@@ -5,6 +5,9 @@
     font-weight:normal;
 }
 
+.labourdev-person-info > .labour-person-basic-detail, .labourdev-person-info > .labour-person-pie-tab {
+    background-color: #191a2d!important;
+}
 
 .col-sm-8 .panel-body {
     padding: 0px;
@@ -44,4 +47,27 @@
 .labour-person-pie-tab > ul > li:nth-child(2){
     float: right;
     padding-right: 10px;
+}
+
+.btn-normal{
+    vertical-align:middle;
+    color:#ffffff;
+    background: #1f2039;
+    border-radius: 1px;
+    padding: 0px 12px;
+    border: 1px #4d97ab solid;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.btn-focus {
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align:middle;
+    color:#ffffff;
+    height: 20px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url(../images/labourdev_btn_bg.png);
 }

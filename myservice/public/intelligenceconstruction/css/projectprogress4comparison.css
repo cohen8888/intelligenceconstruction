@@ -11,13 +11,12 @@
     font-size: 19px;
 }
 
-.row > .col-sm-4 > .prj-info > .panel-body > .table > tbody > tr > td{
+/* .progress-comparison-info table > tbody > tr > td{
     padding:21px 5px;
-}
+} */
+
 .table tr th {
     color: #515362;
     text-align: center;
 }
-.fire-fighting-device-manage-table {
-    padding:20px;
-}
+

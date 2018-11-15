@@ -10,6 +10,7 @@
 }
 
 .btn-normal{
+    vertical-align:middle;
     background: #1f2039;
     border-radius: 20px;
     padding: 0px 15px;
@@ -19,6 +20,7 @@
   }
   
 .btn-focus {
+    vertical-align:middle;
     /* width: 150px; */
     height: 32px;
     border: none;

@@ -18,6 +18,8 @@
         "devicemanage4towercrane":"/api/devicemanage4towercrane",                       //塔吊
         "devicemanage4lift":"/api/devicemanage4lift",                                   //升降机
         "labourdev4person":"/api/labourdev4person",                                     //人员管理
+        "labourdev4entranceguard":"/api/labourdev4entranceguard",                       //实名制门禁
+        "energyenviroment4energy":"/api/energyenviroment4energy",                       //能源管理
         
     };
 
