@@ -20,7 +20,7 @@
         "labourdev4person":"/api/labourdev4person",                                     //人员管理
         "labourdev4entranceguard":"/api/labourdev4entranceguard",                       //实名制门禁
         "energyenviroment4energy":"/api/energyenviroment4energy",                       //能源管理
-        
+        "energyenviroment4enviroment":"/api/energyenviroment4enviroment",               //环境管理
     };
 
     /**
@@ -43,7 +43,7 @@
             }
         })
     }
-    
+
     window.$$ = {};
     window.$$.baseUrl = baseUrl;
     window.$$.moduleUrls = moduleUrls;

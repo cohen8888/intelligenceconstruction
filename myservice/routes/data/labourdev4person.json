@@ -1,7 +1,7 @@
 {
     "globalInfo":{
-        "grandTotalWorker":400,
-        "currentWorker":200
+        "grandTotalWorker":211,
+        "currentWorker":122
     },
     "localeWorkerDistribution":{
         "woodworking":3,

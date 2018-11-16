@@ -1,55 +1,37 @@
-var data = [{
-    "name": "02:00",
-    "value": 80
-}, {
-    "name": "04:00",
-    "value": 87.8
-}, {
-    "name": "06:00",
-    "value": 71
-}, {
-    "name": "08:00",
-    "value": 80
-}, {
-    "name": "10:00",
-    "value": 66
-}, {
-    "name": "12:00",
-    "value": 80
-}, {
-    "name": "14:00",
-    "value": 180
-},{
-    "name": "16:00",
-    "value": 80
-},{
-    "name": "18:00",
-    "value": 80
-},{
-    "name": "20:00",
-    "value": 80
-},{
-    "name": "22:00",
-    "value": 80
-},{
-    "name": "24:00",
-    "value": 80
-}];
-var xData = [],
-    yData = [];
-var min = 50; 
-data.map(function(a, b) {
-    xData.push(a.name);
-    if (a.value === 0) {
-        yData.push(a.value + min);
-    } else {
-        yData.push(a.value);
-    }
-});
+let lineColor = new echarts.graphic.LinearGradient(
+    0, 0, 0, 1, [{
+            offset: 0,
+            color: '#00feff'
+        },
+        {
+            offset: 0.5,
+            color: '#ee7eff'
+        },
+        {
+            offset: 1,
+            color: '#4486ff'
+        }
+    ]
+);
 
-function renderChart(rootElem, datas, x, y){
+let temperatureMaxHighData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+let humidityMaxHighData = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+let pm25MaxHighData = [400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400];
+let pm10MaxHighData = [400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400];
+let noiseMaxHighData = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+let windSpeedMaxHighData = [220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220];
+function renderChart(rootElem, datas, columnarColor, unit, min, max, maxHighData){
+    let xData = [],yData = [];
+    datas.map(function(a, b) {
+        xData.push(a.name);
+        if (a.value === 0) {
+            yData.push(a.value + min);
+        } else {
+            yData.push(a.value);
+        }
+    });
     let option = {
-        color: ['#3398DB'],
+        // color: ['#3398DB'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -60,9 +42,9 @@ function renderChart(rootElem, datas, x, y){
             },
             formatter: function(prams) {
                 if (prams[0].data === min) {
-                    return "合格率：0%"
+                    return "合格率：0%";
                 } else {
-                    return "合格率：" + prams[0].data + "%"
+                    return "合格率：" + prams[0].data;
                 }
             }
         },
@@ -82,7 +64,7 @@ function renderChart(rootElem, datas, x, y){
         xAxis: [{
             type: 'category',
             gridIndex: 0,
-            data: x,
+            data: xData,
             axisTick: {
                 alignWithLabel: true
             },
@@ -93,8 +75,8 @@ function renderChart(rootElem, datas, x, y){
             },
             axisLabel: {
                 show: true,
-                 color: 'rgb(170,170,170)',
-                 fontSize:16
+                color: 'rgb(170,170,170)',
+                fontSize:16
             }
         }],
         yAxis: [{
@@ -107,7 +89,7 @@ function renderChart(rootElem, datas, x, y){
                     show: false
                 },
                 min: min,
-                max: 200,
+                max: max,
                 axisLine: {
                     lineStyle: {
                         color: '#0c3b71'
@@ -115,14 +97,14 @@ function renderChart(rootElem, datas, x, y){
                 },
                 axisLabel: {
                     color: 'rgb(170,170,170)',
-                    formatter: '{value} %'
+                    formatter: '{value} '+ unit
                 }
             },
             {
                 type: 'value',
                 gridIndex: 0,
                 min: min,
-                max: 200,
+                max: max,
                 splitNumber: 12,
                 splitLine: {
                     show: false
@@ -153,24 +135,10 @@ function renderChart(rootElem, datas, x, y){
                 itemStyle: {
                     normal: {
                         barBorderRadius: 20,
-                        color: new echarts.graphic.LinearGradient(
-                            0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: '#00feff'
-                                },
-                                {
-                                    offset: 0.5,
-                                    color: '#027eff'
-                                },
-                                {
-                                    offset: 1,
-                                    color: '#0286ff'
-                                }
-                            ]
-                        )
+                        color: columnarColor
                     }
                 },
-                data: y,
+                data: yData,
                 zlevel: 11
             },
             {
@@ -180,7 +148,7 @@ function renderChart(rootElem, datas, x, y){
                 xAxisIndex: 0,
                 yAxisIndex: 1,
                 barGap: '-135%',
-                data: [200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200],
+                data: maxHighData,
                 itemStyle: {
                     normal: {
                         color: 'rgba(255,255,255,0.1)'
@@ -200,7 +168,13 @@ function renderChart(rootElem, datas, x, y){
 
 $(document).ready(function(){
     let charts = $('.chart');
-    charts.each((index, elem) => {
-        renderChart(echarts.init(elem),null, xData, yData);
-    })
+    $$.ajax($$.baseUrl, $$.moduleUrls.energyenviroment4enviroment).then( res =>{
+        renderChart(echarts.init(charts[0]), res.data.temperature.data,  lineColor, '°C', 0, 50, temperatureMaxHighData);           //温度
+        renderChart(echarts.init(charts[1]), res.data.humidity.data,  lineColor, '%', 0, 100, humidityMaxHighData);                 //湿度
+        renderChart(echarts.init(charts[2]), res.data.pm25.data,  lineColor, '', 0, 400, pm25MaxHighData);                          //pm2.5
+        renderChart(echarts.init(charts[3]), res.data.pm10.data,  lineColor, '', 0, 400, pm10MaxHighData);                          //pm10
+        renderChart(echarts.init(charts[4]), res.data.noise.data,  lineColor, 'dB', 0, 100, noiseMaxHighData);                      //dB
+        renderChart(echarts.init(charts[5]), res.data.windSpeed.data,  lineColor, 'Km/h', 0, 220, windSpeedMaxHighData);            //Km/h
+    });
+
 });

@@ -35,7 +35,8 @@
  
 $(document).ready(function(){
     $$.ajax($$.baseUrl, $$.moduleUrls.labourdev4entranceguard).then(res => {
-
         renderTableInfo($('.labour-entranceguard-info .table tbody'), res.data.workerInfos);
+        $('#currentWorker').html(res.data.globalInfo.currentWorker);
+        $('#grandTotalWorker').html(res.data.globalInfo.grandTotalWorker);
     });
 })

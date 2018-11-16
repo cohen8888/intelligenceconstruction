@@ -33,9 +33,9 @@ function renderTaskInfo(rootElem, data){
     let str = "";
     if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
         data.forEach((item, index) => {
-           str += `<p><h5>实训楼</h5>`;
-           str += `<ul><li><span>总工期：</span><span>90天</span></li>`;
-           str += `<li><span>已完成工期：</span><span>30天</span></li></ul></p>`;      
+           str += `<p><h5>${item['taskName']}</h5>`;
+           str += `<ul><li><span>总工期：</span><span>${item['globalPeriod']}</span></li>`;
+           str += `<li><span>已完成工期：</span><span>${item['completePeriod']}</span></li></ul></p>`;      
         });
     }else{
         str += `<p>没有数据显示，请检查网络或者联系系统管理员！</p>`;
@@ -45,8 +45,8 @@ function renderTaskInfo(rootElem, data){
 
 
 $(document).ready(function(){
-   $$.ajax($$.baseUrl, $$.moduleUrls.globalprogress).then((data)=>{
-       renderTable($('.projectprogress4globalTable tbody'), data.data.globalprogress);
-       renderTaskInfo($('.task-info'), data.data.taskInfo);
+   $$.ajax($$.baseUrl, $$.moduleUrls.globalprogress).then( res =>{
+       renderTable($('.projectprogress4globalTable tbody'), res.data.globalprogress);
+       renderTaskInfo($('.task-info'), res.data.taskInfo);
    });
 })

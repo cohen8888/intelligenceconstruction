@@ -29,6 +29,7 @@ let cacheData = {};
 
 
 $(document).ready(function(){
+    $.ajaxSetup ({ cache: false });
     $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4lift).then((res)=>{
         renderLiftTableInfo($('.dev-manage-lift-title-info .table tbody'), res.data.liftInfo);
         $('.dev-manage-lift-title-info table').on('mouseover', function(event){

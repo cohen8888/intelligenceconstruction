@@ -15,10 +15,10 @@ $(function(){
 
 	$("#cm-menu-scroller a").on("click", function(event){
 		let e = window.event || event;
-		$("#cm-menu-scroller a").each((index, elem) =>{
-			$(elem).removeClass('selected');
-		})
-		$(e.target).addClass('selected')
+		// $("#cm-menu-scroller a").each((index, elem) =>{
+		// 	$(elem).removeClass('selected');
+		// })
+		// $(e.target).addClass('selected')
 
 		// if($(e.target).parent().attr('class') == 'cm-submenu open' ){
 			

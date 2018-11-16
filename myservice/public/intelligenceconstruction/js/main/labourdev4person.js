@@ -102,5 +102,7 @@ $(document).ready(function(){
     $$.ajax($$.baseUrl, $$.moduleUrls.labourdev4person).then(res => {
         generatePersonChart(mychart, res.data.localeWorkerDistribution);
         renderTableInfo($('.labourdev-person-info .table tbody'), res.data.workerInfos);
+        $('#currentWorker').html(res.data.globalInfo.currentWorker);
+        $('#grandTotalWorker').html(res.data.globalInfo.grandTotalWorker);
     });
 })
