@@ -1,0 +1,24 @@
+{
+    "projectInfo":{
+        "projectName":"广西建工建筑安装技工学校柳州新校区",
+        "developmentOrganization":"广西建工建筑安装技工学校",
+        "designOrganization":"广西建工集团第三建筑工程有限责任公司",
+        "constructionOrganization":"广西建工集团第三建筑工程有限责任公司",
+        "constructionAddress":"柳州市柳东新区",
+        "areaStructure":"52448.01 ㎡",
+        "overfloorArea":"42617.18 ㎡",
+        "undergroundArea":"9830.83 ㎡",
+        "projectConstitute":"本项目由7栋建筑组成，包含综合楼、教学楼、实训楼、男生宿舍、女生宿舍、学院宿舍、食堂。",
+        "complexBuilding":"建筑面积： 52448.01 ㎡，高度28.45m，地上8层，地下1层。",
+        "teachingBuilding":"建筑面积： 8270.32 ㎡，高度21.55m，地上6层，地下1层。"
+    },
+    "projectDataInfo":{
+        "startDate":"2018-06-13 15:00:00",
+        "temperature":"0032.1℃",
+        "humidity":"0067.2%",
+        "pm25":"0091.5 mg/m³",
+        "pm10":"0032.1 kg/m",
+        "nose":"0068.2 dB",
+        "windPower":"0000.5 m/s"
+    }
+}

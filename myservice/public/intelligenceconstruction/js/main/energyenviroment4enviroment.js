@@ -20,6 +20,7 @@ let pm25MaxHighData = [400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 40
 let pm10MaxHighData = [400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400];
 let noiseMaxHighData = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
 let windSpeedMaxHighData = [220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220];
+
 function renderChart(rootElem, datas, columnarColor, unit, min, max, maxHighData){
     let xData = [],yData = [];
     datas.map(function(a, b) {
@@ -171,8 +172,8 @@ $(document).ready(function(){
     $$.ajax($$.baseUrl, $$.moduleUrls.energyenviroment4enviroment).then( res =>{
         renderChart(echarts.init(charts[0]), res.data.temperature.data,  lineColor, '°C', 0, 50, temperatureMaxHighData);           //温度
         renderChart(echarts.init(charts[1]), res.data.humidity.data,  lineColor, '%', 0, 100, humidityMaxHighData);                 //湿度
-        renderChart(echarts.init(charts[2]), res.data.pm25.data,  lineColor, '', 0, 400, pm25MaxHighData);                          //pm2.5
-        renderChart(echarts.init(charts[3]), res.data.pm10.data,  lineColor, '', 0, 400, pm10MaxHighData);                          //pm10
+        renderChart(echarts.init(charts[2]), res.data.pm25.data,  lineColor, 'mg/m³', 0, 400, pm25MaxHighData);                          //pm2.5
+        renderChart(echarts.init(charts[3]), res.data.pm10.data,  lineColor, 'kg/m', 0, 400, pm10MaxHighData);                          //pm10
         renderChart(echarts.init(charts[4]), res.data.noise.data,  lineColor, 'dB', 0, 100, noiseMaxHighData);                      //dB
         renderChart(echarts.init(charts[5]), res.data.windSpeed.data,  lineColor, 'Km/h', 0, 220, windSpeedMaxHighData);            //Km/h
     });

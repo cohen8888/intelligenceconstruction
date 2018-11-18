@@ -1,20 +1,20 @@
-<link rel="stylesheet" href="css/projectprogress4plan.css">
-<div class="row">
-	<div class="col-sm-8">
-        <div class="panel-heading plan-title">
+<div class="row projectprogress-plan">
+	<div class="col-sm-9">
+        <div class="panel-heading title">
             <div class="text-left">计划进度</div>
         </div>
         <div class="panel-body">
             <video src="" poster="images/plan_video.png" style="width: 100%;height: 100%;"></video>
         </div>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-3">
 		<div class="panel panel-default">
-			<div class="panel-heading plan-title">
-				<div class="text-left">项目信息：</div>
+			<div class="panel-heading title">
+                <div class="text-left">项目信息</div>
+                <div class="text-right"><button>导入</button></div>
 			</div>
 			<div class="panel-body">
-                <table class="table table-bordered table-hover plan-table">
+                <table class="table table-bordered table-hover">
                     <caption></caption>
                     <thead>
                         <tr>
@@ -29,4 +29,6 @@
 		</div>
 	</div>
 </div>
-<script src="js/main/projectprogress4plan.js"></script>
+<script>
+    $$.moduleProjectprogressPlan();
+</script>

@@ -1,9 +1,8 @@
 <!-- 安全管理——安全巡检——问题汇总 -->
-<link rel="stylesheet" href="css/safety4pollingcheck.css">
 
 <div class="row safetydev-pollingcheck-questionsummarizing">
 	<div class="col-sm-8">
-        <div class="panel-heading safty-polling-check-title">
+        <div class="panel-heading title">
             <div class="text-left">
                     <button class="btn-normal btn-focus">问题汇总</button>
                     <button class="btn-normal">巡检问题</button>
@@ -15,12 +14,13 @@
 	</div>
 	<div class="col-sm-4">
 		<div class="panel panel-default safty-polling-check-info">
-            <div class="panel-heading safty-polling-check-title">
+            <div class="panel-heading title">
                 <div class="text-left">安全信息</div>
             </div>
             <div class="panel-body">
                 <div class="row" style="border-bottom:1px #474857 solid">
-                    <div class="safetyProblemSummarizing-chart center-block" style="width:400px;height:400px;">
+                    <div class="safty-question-chart-title">安全问题汇总</div>
+                    <div class="safetyProblemSummarizing-chart center-block" style="width:400px;height:360px;">
                     </div>
                 </div>
                 <div class="row">
@@ -34,7 +34,7 @@
 <!-- 安全管理——安全巡检—巡检问题 -->
 <div class="row safetydev-pollingcheck-problem">
 	<div class="col-sm-8">
-        <div class="panel-heading safty-polling-check-title">
+        <div class="panel-heading title">
             <div class="text-left">
                     <button class="btn-normal">问题汇总</button>
                     <button class="btn-normal btn-focus">巡检问题</button>
@@ -46,7 +46,7 @@
 	</div>
 	<div class="col-sm-4">
 		<div class="panel panel-default safetydev-pollingcheck-problem-info">
-            <div class="panel-heading safty-polling-check-title">
+            <div class="panel-heading title">
                 <div class="text-left">问题信息</div>
             </div>
             <div class="panel-body">
@@ -54,6 +54,6 @@
         </div>
 	</div>
 </div>
-
-<script src="js/lib/echarts.js"></script>
-<script src="js/main/safety4pollingcheck.js"></script>
+<script>
+    $$.moduleSafetyPollingCheck();
+</script>

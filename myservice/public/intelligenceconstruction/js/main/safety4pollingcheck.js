@@ -4,9 +4,8 @@
  * date:2018-11-14
  */
 
-
- 
-/**
+ (function(){
+     /**
  * 安全巡检——问题汇总
  * @param {*} rootChart 
  * @param {*} data 
@@ -43,11 +42,11 @@ function generateSafetySummarizingChart(rootChart, data){
         },
         legend: {
             selectedMode: false,
-            orient: 'vertical',
+            orient: 'horizontal',
             x: 'center',
             textStyle:{
-                color:'#fff',
-                fontSize:18,
+                color:'#9b9ba0',
+                fontSize:14,
                 align:'center'
             },
             formatter:function(name){
@@ -66,7 +65,7 @@ function generateSafetySummarizingChart(rootChart, data){
             {
                 name:'安全问题汇总',
                 type:'pie',
-                radius: ['50%', '70%'],
+                radius: ['25%', '50%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -118,22 +117,31 @@ function generateSafetySummarizingChart(rootChart, data){
     let option = {
         title: {
             text:'安全问题分类',
-            left:'center',
+            left:'left',
             padding:[24,0],
             textStyle:{
-                color:'#fff',
-                fontSize:18,
+                color:'#9b9ba0',
+                fontSize:14,
                 align:'center'
             }
         },
         legend: {
             selectedMode: false,
-            orient: 'vertical',
-            x: 'right',
+            orient: 'horizontal',
+            x: 'center',
             textStyle:{
-                color:'#fff',
-                fontSize:18,
+                color:'#9b9ba0',
+                fontSize:14,
                 align:'center'
+            },
+            formatter:function(name){
+                let result = "";
+                chartDatas.forEach((elem, index) => {
+                    if (elem['name'] == name){
+                        result = name + ' ' + elem['value'] + '个';
+                    }
+                })
+                return result;
             },
             bottom: 5,
             data:legendDatas
@@ -142,7 +150,8 @@ function generateSafetySummarizingChart(rootChart, data){
             {
                 name:'质量问题分类',
                 type:'pie',
-                radius: ['50%', '70%'],
+                radius: ['25%', '50%'],
+                center: ['50%','40%'],
                 avoidLabelOverlap: false,
                 label: {
                     normal: {
@@ -193,22 +202,34 @@ function generateSafetySummarizingChart(rootChart, data){
     rootElem.html(str);
 }
 
-$(document).ready(function(){
-    let mychart = echarts.init($('.safetyProblemSummarizing-chart').get(0));
-    let mychart1 = echarts.init($('.safetyProblemClassfy-chart').get(0));
-    $('.safty-polling-check-title').on('click', function(event){
-        let btnConent = event.target.innerHTML;
-        if (btnConent == '问题汇总'){
-            $('.safetydev-pollingcheck-questionsummarizing').css('display','block');
-            $('.safetydev-pollingcheck-problem').css('display','none');
-        }else{
-            $('.safetydev-pollingcheck-questionsummarizing').css('display','none');
-            $('.safetydev-pollingcheck-problem').css('display','block');
-        }
-    })
-    $$.ajax($$.baseUrl, $$.moduleUrls.safety4pollingcheck).then(res => {
-        generateSafetySummarizingChart(mychart, res.data.problemSummarizing.safetyProblemSummarizing);
-        generateSafetyProblemClassfyChart(mychart1, res.data.problemSummarizing.safetyProblemClassify);
-        renderPollingCheckInfo($('.safetydev-pollingcheck-problem-info .panel-body'), res.data.questionInfos);
-    });
-})
+    $$.moduleSafetyPollingCheck = function(){
+        let mychart = echarts.init($('.safetyProblemSummarizing-chart').get(0));
+        let mychart1 = echarts.init($('.safetyProblemClassfy-chart').get(0));
+        $('.safetydev-pollingcheck-questionsummarizing .title').on('click', function(event){
+            let btnConent = event.target.innerHTML;
+            if (btnConent == '问题汇总'){
+                $('.safetydev-pollingcheck-questionsummarizing').css('display','block');
+                $('.safetydev-pollingcheck-problem').css('display','none');
+            }else{
+                $('.safetydev-pollingcheck-questionsummarizing').css('display','none');
+                $('.safetydev-pollingcheck-problem').css('display','block');
+            }
+        })
+        $('.safetydev-pollingcheck-problem .title').on('click', function(event){
+            let btnConent = event.target.innerHTML;
+            if (btnConent == '问题汇总'){
+                $('.safetydev-pollingcheck-questionsummarizing').css('display','block');
+                $('.safetydev-pollingcheck-problem').css('display','none');
+            }else{
+                $('.safetydev-pollingcheck-questionsummarizing').css('display','none');
+                $('.safetydev-pollingcheck-problem').css('display','block');
+            }
+        })
+        $$.ajax($$.baseUrl, $$.moduleUrls.safety4pollingcheck).then(res => {
+            generateSafetySummarizingChart(mychart, res.data.problemSummarizing.safetyProblemSummarizing);
+            generateSafetyProblemClassfyChart(mychart1, res.data.problemSummarizing.safetyProblemClassify);
+            renderPollingCheckInfo($('.safetydev-pollingcheck-problem-info .panel-body'), res.data.questionInfos);
+        });
+    }
+
+ })()

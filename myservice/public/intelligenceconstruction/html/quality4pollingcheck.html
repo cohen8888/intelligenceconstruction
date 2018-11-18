@@ -1,22 +1,33 @@
 <!-- 质量管理——质量巡检 -->
-<link rel="stylesheet" href="css/quality4pollingcheck.css">
-<div class="row">
+<div class="row quality-polling-check">
 	<div class="col-sm-8">
-        <div class="panel-heading quality-polling-check-title">
+        <div class="panel-heading title">
             <div class="text-left">质量巡检</div>
         </div>
         <div class="panel-body">
-            <img src="images/quality_pollingcheck.png" style="width: 100%;height: 100%;" />
+			<img src="images/quality_pollingcheck.png" style="width: 100%;height: 100%;" />
+			<div class="popup-message-detail">
+				<ul>
+					<li><span>问题描述：</span><span class="pm_detail">塔吊2</span></li>
+					<li><span>检查人：</span><span class="pm_detail">1036</span></li>
+					<li><span>整改要求：</span><span class="pm_detail">——</span></li>
+					<li><span>整改人：</span><span class="pm_detail">乔工</span></li>
+					<li><span>状态：</span><span class="pm_detail">13912345678</span></li>
+					<li><span>检查结果：</span><span class="pm_detail">2018年11月02日 14:20</span></li>
+					<li><span>附件：</span><span class="pm_detail">乔工</span></li>
+				</ul>
+			</div>
         </div>
 	</div>
 	<div class="col-sm-4">
 		<div class="panel panel-default quality-polling-check-info">
-			<div class="panel-heading quality-polling-check-title">
+			<div class="panel-heading title">
 				<div class="text-left">问题信息</div>
 			</div>
-			<div class="panel-body">
-			</div>
+			<div class="panel-body"></div>
 		</div>
 	</div>
 </div>
-<script src="js/main/quality4pollingcheck.js"></script>
+<script>
+	$$.moduleQualityPollingCheck();
+</script>

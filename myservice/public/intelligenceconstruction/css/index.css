@@ -1,3 +1,4 @@
+/* 公共的样式 */
 .cm-logo {
     background: url(../images/logo.svg) no-repeat 0px center transparent;
 }
@@ -51,3 +52,521 @@
     padding: 0px 115px 0px 50px;
 }
 
+.title {
+    height:52px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.row {
+    margin: 0;
+}
+
+.title .text-left {
+    line-height: 32px;
+    vertical-align: middle;
+}
+
+.table > thead > tr > th {
+    height: 52px;
+    text-align : center;
+    color : #4e505f;
+}
+
+.table td {
+    height: 52px;
+}
+.panel-body {
+    height: 838px;
+}
+.col-sm-8 .panel-body {
+    padding: 0px;
+}
+
+.popup-message {
+    position: absolute;
+    right: 49px;
+    top:109px;
+    background: #1e242d;
+    opacity: 0.7;
+    width:364px;
+    height:281px;
+    z-index: 100;
+    border-radius: 8px;
+    font-size: 16px;
+    display: none;
+}
+
+.popup-message .popup-title {
+    font-size: 18px;
+}
+
+.popup-message .popup-title{
+    padding: 14px 0px;
+}
+
+
+/* 进度管理——总进度 */
+
+.projectprogress-global .title .text-left{
+    float:left;
+}
+.projectprogress-global .title .text-right{
+    width:344px;
+    float:right;
+}
+.projectprogress-global .title .text-right > button {
+    width:90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
+.projectprogress-global .title .text-right > button {
+    width:90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
+
+.projectprogress-global .qry-task {
+    background: #1f2039;
+    border-radius: 20px;
+    border: 1px #8e8f9b solid;
+    padding-left: 3%;
+    height: 32px;
+}
+.projectprogress-global .icon-search {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    right: 25px;
+    top:15px;
+    z-index:5;
+    background-image: url(../img/sf/search.svg); /*引入图片图片*/
+    background-repeat: no-repeat; /*设置图片不重复*/
+    background-position: 0px 0px; /*图片显示的位置*/
+    width: 20px; /*设置图片显示的宽*/
+    height: 20px; /*图片显示的高*/
+}
+
+.projectprogress-global .col-sm-9 .title {
+    content:'';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width:100%;
+}
+
+.projectprogress-global .col-sm-9 .title div {
+    height: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.projectprogress-global .panel-body {
+    height: 838px;
+}
+
+.projectprogress-global .task-info > h5 {
+    color : #4e505f;
+}
+.projectprogress-global .task-info ul {
+    padding:0px;
+}
+
+/* 进度管理——里程碑进度 */
+
+.projectprogress-milestone .panel-body {
+    height: 416px;
+}
+
+/* 进度瓜尼——计划进度 */
+.projectprogress-plan > .col-sm-9 > .panel-body {
+    padding:0;
+}
+.projectprogress-plan .title .text-left{
+    float:left;
+}
+.projectprogress-plan .title .text-right{
+    float:right;
+}
+.projectprogress-plan .col-sm-3 .title div {
+    height: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.projectprogress-plan .title button{
+    width:90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
+
+/* 进度管理——进度对比 */
+.projectprogress-comparison > .col-sm-9 > .panel-body {
+    padding:0;
+}
+
+/* 质量管理——问题汇总 */
+.quality-question-chart {
+    border-bottom: 1px solid #474857;
+}
+
+.quality-question-chart-title {
+    position: relative;
+    top:120px;
+    color:  #9b9ba0;
+    font-weight: bold;
+}
+
+/* 质量管理——质量巡检 */
+.quality-polling-check .quality-polling-check-info .info-img{
+    float:left;
+}
+.quality-polling-check .quality-polling-check-info .info-msg{
+    float:left;
+}
+
+.quality-polling-check .quality-polling-check-info .row {
+    margin: 20px 28px 0px 15px;
+    padding: 6px 4px 7px 5px; 
+    border: 1px #7e7f89 solid;
+}
+
+.quality-polling-check .popup-message{
+    width:161px;
+    height: 133px;
+    background-color: #191c28;
+    border-radius: 8px;
+    opacity: 0.9;
+    padding:5px;
+}
+.quality-polling-check .popup-message > ul{
+    padding:14px 15px;
+}
+.quality-polling-check .popup-message ul > li{
+    padding:5px 0;
+}
+
+.quality-polling-check .popup-message-detail{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    background: #1e242d;
+    opacity: 0.9;
+    width:364px;
+    height:331px;
+    z-index: 100;
+    border-radius: 8px;
+    font-size: 16px;
+    display: none;
+}
+.quality-polling-check .popup-message-detail ul{
+    margin-top: 40px;
+    padding:0px 31px;
+}
+.quality-polling-check .popup-message-detail li{
+    padding:5px 0px;
+}
+
+/* 质量管理——重点工艺 */
+
+
+.quality-craft .quality-craft-info .row {
+    margin: 20px 28px 0px 15px;
+    padding: 6px 4px 7px 5px; 
+    border: 1px #7e7f89 solid;
+}
+.quality-craft .quality-craft-info .info-img{
+    float:left;
+}
+.quality-craft .quality-craft-infoo .info-msg{
+    float:left;
+}
+
+/* 安全管理——安全巡检 */
+.btn-normal{
+    vertical-align:middle;
+    background: #1f2039;
+    border-radius: 20px;
+    padding: 0px 15px;
+    border: 1px #8e8f9b solid;
+    height: 32px;
+    font-size: 14px
+  }
+  
+.btn-focus {
+    vertical-align:middle;
+    /* width: 150px; */
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png');
+}
+
+.safetydev-pollingcheck-problem {
+    display:none;
+}
+
+.safetydev-pollingcheck-problem-info .row {
+    margin: 20px 28px 0px 15px;
+    padding: 6px 4px 7px 5px; 
+    border: 1px #7e7f89 solid;
+}
+.safetydev-pollingcheck-problem-info div .info-img{
+    float:left;
+}
+.safetydev-pollingcheck-problem-info div .info-msg{
+    float:left;
+}
+.safty-question-chart-title {
+    font-weight: bold;
+    color:#9b9ba0;
+    padding-left: 38px;
+    padding-top: 20px;
+}
+
+/* 安全管理——消防管理 */
+.key-position {
+    display: none;
+}
+
+.safety-evacuate {
+    display: none;
+}
+
+.key-position .col-sm-4 .panel-body,
+.fire-fighting-device .col-sm-4 .panel-body{
+    height: 419px;
+}
+
+/* 安全管理——安全监测 */
+.safety-monitoring .col-sm-4 .panel-body{
+    height: 419px;
+}
+.safety-monitoring > .col-sm-4 > .panel > .border{
+    border-bottom: 1px solid #7e7f89;
+}
+
+/* 设备管理——塔吊 */
+.devicemanage-towercrane .col-sm-4 .panel-body{
+    height: 419px;
+}
+
+/* 设备管理——升降机 */
+.devicemanage-lift .col-sm-4 .panel-body{
+    height: 419px;
+}
+
+/* 能源环境管理——能源管理 */
+.energyenviroment-energy{
+    margin-left: 10px;
+}
+
+.energyenviroment-energy .energy-manage {
+    padding: 5px 0px;
+}
+.energyenviroment-energy .power-consumption > .panel-heading{
+    background-color: #191a2d!important;
+}
+.energyenviroment-energy .power-consumption > .panel-heading > .text-left{
+    background-color: #191a2d;
+}
+.energyenviroment-energy .water-consumption > .panel-heading{
+    background-color: #191a2d!important;
+}
+.energyenviroment-energy .water-consumption > .panel-heading > .text-left{
+    background-color: #191a2d;
+}
+
+.energyenviroment-energy .power-consumption .panel-heading .text-left span:nth-child(2), 
+.energyenviroment-energy .water-consumption .panel-heading .text-left span:nth-child(2){
+    padding-left: 12px;
+}
+
+.water-consumption .panel-heading > .text-left {
+    padding-top:5px;
+    border-top: 1px solid #303142!important;
+}
+.energyenviroment-energy .power-consumption .panel-body{
+    padding:1px;
+}
+.energyenviroment-energy .water-consumption .panel-body{
+    padding:1px;
+}
+
+.energyenviroment-energy .panel-body {
+    height: 373px;
+}
+
+/* 能源环境管理——环境管理 */
+.energyenviroment-enviroment row {
+    margin-left: 10px;
+}
+.energyenviroment-enviroment .chart-header * {
+    display: inline-block;
+    font-size:14px;
+}
+.energyenviroment-enviroment .chart-header span:first-child {
+    float: left;
+    color:#4b4d5c;
+}
+.energyenviroment-enviroment .chart-header span:last-child {
+    float: right;
+    margin-right: 45px;
+ }
+ .energyenviroment-enviroment .panel-body {
+    height: 373px;
+}
+
+/* 劳务实名管理——人员管理 */
+.labourdev-person .row > .col-sm-4 > .labourdev-person-info > .panel-body > .table > tbody > tr > td{
+    padding:21px 5px;
+}
+.labourdev-person .table tr th {
+    color: #515362;
+    text-align: center;
+}
+
+.labourdev-person .labourdev-person-info > .labour-person-basic-detail, .labourdev-person-info > .labour-person-pie-tab {
+    background-color: #191a2d!important;
+}
+
+.labourdev-person .labour-person-basic-detail ul {
+    list-style-type: none;
+    color:#ffffff;
+    /* padding: 10px 20px; */
+    font-size: 19px;
+    padding:0px 17px;
+    font-weight: normal;
+}
+.labourdev-person .labour-person-basic-detail > ul > li{
+    float: left;
+    margin-right: 5%;
+}
+.labourdev-person .labour-person-pie-tab ul {
+    list-style-type: none;
+    color: #515362; 
+    font-size: 14px;
+    padding:0px 17px;
+}
+
+.labourdev-person .labour-person-pie-tab > ul > li:nth-child(1){
+    float: left;
+
+}
+.labourdev-person .labour-person-pie-tab > ul > li:nth-child(2){
+    float: right;
+    padding-right: 10px;
+}
+
+.labourdev-person .col-sm-4 .panel-body {
+    height:373px;
+}
+
+.labourdev-person .btn-normal{
+    vertical-align:middle;
+    color:#ffffff;
+    background: #1f2039;
+    border-radius: 1px;
+    padding: 0px 12px;
+    border: 1px #4d97ab solid;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.labourdev-person .btn-focus {
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align:middle;
+    color:#ffffff;
+    height: 20px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url(../images/labourdev_btn_bg.png);
+}
+
+/* 劳务实名制管理——实名制门禁 */
+
+.labourdev-entranceguard .row > .col-sm-4 > .labour-entranceguard-info > .panel-body > .table > tbody > tr > td{
+    padding:21px 5px;
+}
+.labourdev-entranceguard .table tr th {
+    color: #515362;
+    text-align: center;
+}
+.labour-entranceguard-info > .labour-entranceguard-detail, .labour-entranceguard-info > .labour-entranceguard-tab {
+    background-color: #191a2d!important;
+}
+
+.labour-entranceguard-detail > ul {
+    list-style-type: none;
+    color:#ffffff;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.labour-entranceguard-detail ul li{
+    float: left;
+    margin-right: 5%;
+}
+
+
+.labour-entranceguard-tab ul {
+    list-style-type: none;
+    color: #515362; 
+    font-size: 14px;
+    padding:0px 17px;
+}
+
+.labour-entranceguard-tab > ul > li:nth-child(1){
+    float: left;
+
+}
+.labour-entranceguard-tab > ul > li:nth-child(2){
+    float: right;
+    padding-right: 10px;
+}
+
+.labour-entranceguard-detail ul {
+    list-style-type: none;
+    color:#ffffff;
+    /* padding: 10px 20px; */
+    font-size: 19px;
+    padding:0px 17px;
+    font-weight: normal;
+}
+
+.labourdev-entranceguard .btn-normal{
+    vertical-align:middle;
+    color:#ffffff;
+    background: #1f2039;
+    border-radius: 1px;
+    padding: 0px 12px;
+    border: 1px #4d97ab solid;
+    height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.labourdev-entranceguard .btn-focus {
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align:middle;
+    color:#ffffff;
+    height: 20px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url(../images/labourdev_btn_bg.png);
+}
+
+/* 资料管理——文件管理 */
+
+.infomationdev-content .title {
+    color:#1f2039;
+}

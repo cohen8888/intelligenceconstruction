@@ -2260,13 +2260,13 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 9px;
+  padding: 0px 9px;
   line-height: 1.428571429;
-  vertical-align: top;
+  vertical-align: middle;
   border-top: 1px solid #dddddd;
 }
 .table > thead > tr > th {
-  vertical-align: bottom;
+  vertical-align: middle;
   border-bottom: 2px solid #dddddd;
 }
 .table > caption + thead > tr:first-child > th,
@@ -5537,7 +5537,7 @@ a.list-group-item-danger.active:focus {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-  padding: 20px;
+  padding: 10px;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -7120,7 +7120,7 @@ header .cm-navbar:last-child {
 .cm-menu-items li.active a {
   -webkit-box-shadow: inset 3px 0 0 #3498db;
   box-shadow: inset 3px 0 0 #3498db;
-  /* color: #03b9f1; */
+  color: #03b9f1;
 }
 
 .cm-menu-items:after {
@@ -7895,10 +7895,7 @@ body.cm-login {
 .panel {
   margin-bottom: 20px;
 }
-.container-fluid > .row:first-child,
-.container-fluid > .panel:first-child {
-  margin-top: 20px;
-}
+
 .cm-container-white {
   padding: 20px 25px;
 }

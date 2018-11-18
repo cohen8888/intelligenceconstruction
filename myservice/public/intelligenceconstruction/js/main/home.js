@@ -1,35 +1,28 @@
-$(function(){
 
-    var btn_cc = 'btn-primary';
-    var navbar_cc = 'cm-navbar-primary';
-	var pageArr = ["html/home.html", "", "html/projectprogress4global.html", "html/projectprogress4milestone.html",
-					"html/projectprogress4plan.html","html/projectprogress4comparison.html","",
-					"html/quality4problemsummarizing.html","html/quality4pollingcheck.html","html/quality4craft.html","",
-					"html/safety4pollingcheck.html","html/safety4videomonitoring.html","html/safety4fireprotection.html",
-					"html/safety4monitoring.html","","html/devicemanage4towercrane.html","html/devicemanage4lift.html","",
-					"html/energyenviroment4energy.html","html/energyenviroment4enviroment.html","","html/labourdev4person.html",
-					"html/labourdev4entranceguard.html","","html/informationdev4file.html","html/informationdev4repository.html",
-					"html/setting.html"
-				];
-
-
-	$("#cm-menu-scroller a").on("click", function(event){
-		let e = window.event || event;
-		// $("#cm-menu-scroller a").each((index, elem) =>{
-		// 	$(elem).removeClass('selected');
-		// })
-		// $(e.target).addClass('selected')
-
-		// if($(e.target).parent().attr('class') == 'cm-submenu open' ){
-			
-		// }
-
-		if(pageArr[$("#cm-menu-scroller a").index(e.target)] != ''){
-			$("#global .container-fluid").load(pageArr[$("#cm-menu-scroller a").index(e.target)]);
-		}
-		
-	})
-
+(function(){
 	$("#global .container-fluid").load("./html/home.html");
-
-});
+	$$.moduleHomeLoad = function(){
+		$$.ajax($$.baseUrl, $$.moduleUrls.home).then(res => {
+			let projectObj = res.data.projectInfo;
+			let dataObj = res.data.projectDataInfo;
+			$('.prj-info-detail').get(0).innerHTML = projectObj.projectName;
+			$('.prj-info-detail').get(1).innerHTML = projectObj.developmentOrganization;
+			$('.prj-info-detail').get(2).innerHTML = projectObj.designOrganization;
+			$('.prj-info-detail').get(3).innerHTML = projectObj.constructionOrganization;
+			$('.prj-info-detail').get(4).innerHTML = projectObj.constructionAddress;
+			$('.prj-info-detail').get(5).innerHTML = "总面积 " + projectObj.areaStructure + "，地上 " + 
+				projectObj.overfloorArea + "，地下 " + projectObj.undergroundArea;
+			$('.prj-info-detail').get(6).innerHTML = projectObj.projectConstitute;
+			$('.prj-info-detail').get(7).innerHTML = projectObj.complexBuilding;
+			$('.prj-info-detail').get(8).innerHTML = projectObj.teachingBuilding;
+	
+			$('.prj-data-info').get(0).innerHTML = dataObj.startDate;
+			$('.prj-data-info').get(1).innerHTML = dataObj.temperature;
+			$('.prj-data-info').get(2).innerHTML = dataObj.humidity;
+			$('.prj-data-info').get(3).innerHTML = dataObj.pm25;
+			$('.prj-data-info').get(4).innerHTML = dataObj.pm10;
+			$('.prj-data-info').get(5).innerHTML = dataObj.nose;
+			$('.prj-data-info').get(6).innerHTML = dataObj.windPower;
+		});
+	}
+})();

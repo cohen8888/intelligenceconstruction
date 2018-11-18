@@ -85,7 +85,7 @@
 .sf-handshake{background-image:url("../img/sf/handshake.svg")!important;}
 .sf-headphone{background-image:url("../img/sf/headphone.svg")!important;}
 .sf-heart{background-image:url("../img/sf/heart.svg")!important;}
-.sf-house{background-image:url("../img/sf/house.svg")!important;}
+.sf-house{background-image:url("../img/sf/house.png")!important;}
 .sf-institution{background-image:url("../img/sf/institution.svg")!important;}
 .sf-key{background-image:url("../img/sf/key.svg")!important;}
 .sf-keyring{background-image:url("../img/sf/keyring.svg")!important;}
@@ -167,3 +167,12 @@
 .sf-wine{background-image:url("../img/sf/wine.svg")!important;}
 .sf-wrench-screwdriver{background-image:url("../img/sf/wrench-screwdriver.svg")!important;}
 .sf-wrench{background-image:url("../img/sf/wrench.svg")!important;}
+.sf-quality{background-image:url("../img/sf/quality.png")!important;}
+.sf-setting{background-image:url("../img/sf/setting.png")!important;}
+.sf-safety{background-image:url("../img/sf/safety.png")!important;}
+.sf-device{background-image:url("../img/sf/device.png")!important;}
+.sf-labour{background-image:url("../img/sf/labour.png")!important;}
+.sf-energy{background-image:url("../img/sf/energy.png")!important;}
+.sf-file{background-image:url("../img/sf/file.png")!important;}
+.sf-dashboard{background-image:url("../img/sf/dashboard.png")!important;}
+

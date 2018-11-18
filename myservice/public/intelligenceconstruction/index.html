@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/small-n-flat.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/projectprogress4milestone.css">
+    <link rel="stylesheet" href="css/zTreeStyle.css">
     <title>智能工地管理平台</title>
 </head>
 
@@ -28,7 +28,7 @@
             <div id="cm-menu-items-wrapper">
                 <div id="cm-menu-scroller">
                     <ul class="cm-menu-items">
-                        <li class="active"><a href="#" class="sf-house selected">项目概况</a></li>
+                        <li class="active"><a href="#" class="sf-house">项目概况</a></li>
                         <li class="cm-submenu">
                             <a href="#" class="sf-dashboard">进度管理<span class="caret"></span></a>
                             <ul>
@@ -39,7 +39,7 @@
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a href="#" class="sf-window-layout">质量管理<span class="caret"></span></a>
+                            <a href="#" class="sf-quality">质量管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">问题汇总</a></li>
                                 <li><a href="#">质量巡检</a></li>
@@ -47,7 +47,7 @@
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a class="sf-window-layout">安全管理<span class="caret"></span></a>
+                            <a class="sf-safety">安全管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">安全巡检</a></li>
                                 <li><a href="#">视频监控</a></li>
@@ -56,34 +56,34 @@
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a class="sf-cat">设备管理<span class="caret"></span></a>
+                            <a class="sf-device">设备管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">塔吊</a></li>
                                 <li><a href="#">升降机</a></li>
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a href="#" class="sf-notepad">能源环境管理<span class="caret"></span></a>
+                            <a href="#" class="sf-energy">能源环境管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">能源管理</a></li>
                                 <li><a href="#">环境管理</a></li>
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a href="#" class="sf-notepad">劳务实名制管理<span class="caret"></span></a>
+                            <a href="#" class="sf-labour">劳务实名制管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">人员管理</a></li>
                                 <li><a href="#">实名制门禁</a></li>
                             </ul>
                         </li>
                         <li class="cm-submenu">
-                            <a href="#" class="sf-notepad">资料管理<span class="caret"></span></a>
+                            <a href="#" class="sf-file">资料管理<span class="caret"></span></a>
                             <ul>
                                 <li><a href="#">文件管理</a></li>
                                 <li><a href="#">知识库管理</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="sf-notepad">系统设置</a></li>
+                        <li><a href="#" class="sf-setting">系统设置</a></li>
                     </ul>
                 </div>
             </div>
@@ -119,11 +119,29 @@
     <script src="js/lib/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
     <script src="js/jquery.cookie.min.js"></script>
+    <script src="js/lib/jquery.ztree.core.js"></script>
+    <script src="js/lib/jquery.ztree.excheck.js"></script>
+    <script src="js/lib/jquery.ztree.exedit.js"></script>
     <script src="js/fastclick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/clearmin.min.js"></script>
-    <script src="js/main/home.js"></script>
+    <script src="js/lib/echarts.js"></script>
     <script src="js/main/common.js"></script>
+    <script src="js/main/home.js"></script>
+    <script src="js/main/projectprogress4global.js"></script>                   <!-- 总进度 -->
+                                                                                <!-- 里程碑进度 -->
+    <script src="js/main/projectprogress4plan.js"></script>                     <!-- 计划进度 -->
+    <script src="js/main/projectprogress4comparison.js"></script>               <!-- 进度对比 -->
+    <script src="js/main/quality4problemsummarizing.js"></script>               <!-- 问题汇总 -->
+    <script src="js/main/quality4pollingcheck.js"></script>                     <!-- 质量巡检 -->
+    <script src="js/main/quality4craft.js"></script>                            <!-- 重点工艺 -->
+    <script src="js/main/safety4pollingcheck.js"></script>                      <!-- 安全巡检 -->
+    <script src="js/main/safety4fireprotection.js"></script>                    <!-- 消防管理 -->
+    <script src="js/main/devicemanage4towercrane.js"></script>                  <!-- 塔吊 -->
+    <script src="js/main/devicemanage4lift.js"></script>                        <!-- 升降机 -->
+    <script src="js/main/energyenviroment4energy.js"></script>                  <!-- 能量管理-->
+    <script src="js/main/labourdev4person.js"></script>                         <!-- 人员管理-->
+    <script src="js/main/labourdev4entranceguard.js"></script>                  <!-- 实名制门禁-->
 </body>
 
 </html>

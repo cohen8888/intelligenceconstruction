@@ -1,8 +1,8 @@
 <!-- 劳务实名管理——人员管理 -->
-<link rel="stylesheet" href="css/labourdev4person.css">
-<div class="row">
+
+<div class="row labourdev-person">
     <div class="col-sm-8">
-        <div class="panel-heading labourdev-person-title">
+        <div class="panel-heading title">
             <div class="text-left">人员管理</div>
         </div>
         <div class="panel-body">
@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm-4">
         <div class="panel panel-default labourdev-person-info">
-            <div class="panel-heading labourdev-person-title">
+            <div class="panel-heading title">
                 <div class="text-left">基本信息</div>
             </div>
             <div class="panel-heading labour-person-basic-detail">
@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="panel-body">
-                <div id="person-info" style="width: 420px;height: 400px;" />
+                <div id="person-info" class="center-block" style="width: 420px;height: 400px;" />
             </div>
             <div class="panel-body">
                 <table class="table table-bordered table-hover">
@@ -45,5 +45,6 @@
         </div>
     </div>
 </div>
-<script src="js/lib/echarts.js"></script>
-<script src="js/main/labourdev4person.js"></script>
+<script>
+    $$.moduleLabourdevPerson();
+</script>

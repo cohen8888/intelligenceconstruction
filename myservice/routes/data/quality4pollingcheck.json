@@ -1,32 +1,175 @@
-{
-    "questionInfos":[
-        {
-            "questionInfoNo":"000002",
-            "author":"赵鹏",
-            "findDatetime":"2018-11-10 15:00:00",
-            "content":"问题信息，下雨未能完成",
-            "imgUrl":"images/quality_problem.png"
-        },
-        {
-            "questionInfoNo":"000003",
-            "author":"赵鹏",
-            "findDatetime":"2018-11-12 15:00:00",
-            "content":"问题信息，雾霾不能正常进行",
-            "imgUrl":"images/quality_problem.png"
-        },
-        {
-            "questionInfoNo":"000001",
-            "author":"赵鹏",
-            "findDatetime":"2018-11-10 15:00:00",
-            "content":"问题信息，下雪未能完成",
-            "imgUrl":"images/quality_problem.png"
-        },
-        {
-            "questionInfoNo":"000005",
-            "author":"赵鹏",
-            "findDatetime":"2018-07-10 15:00:00",
-            "content":"问题信息，下雪未能完成",
-            "imgUrl":"images/quality_problem.png"
-        }
-    ]
-}
+[
+    {
+        "subPrjectNo":"p0000001",
+        "subProjectName":"食堂",
+        "problemCount":5,
+        "awaitRectification":1,
+        "questionInfos":[
+            {
+                "questionInfoNo":"000002",
+                "questionDescription":"楼板加固不完全,存在曲翘不平整",
+                "checkUser":"王海鸣 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            }
+        ]
+    },
+    {
+        "subPrjectNo":"p0000002",
+        "subProjectName":"学员宿舍",
+        "problemCount":1,
+        "awaitRectification":2,
+        "questionInfos":[
+            {
+                "questionInfoNo":"000002",
+                "questionDescription":"楼板加固不完全,存在曲翘不平整",
+                "checkUser":"赵小鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            }
+        ]
+    },
+    {
+        "subPrjectNo":"p0000003",
+        "subProjectName":"教学楼",
+        "problemCount":8,
+        "awaitRectification":2,
+        "questionInfos":[
+            {
+                "questionInfoNo":"000002",
+                "questionDescription":"楼板加曲翘不平整",
+                "checkUser":"赵小鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            }
+        ]
+    },
+    {
+        "subPrjectNo":"p0000004",
+        "subProjectName":"男生宿舍",
+        "problemCount":3,
+        "awaitRectification":0,
+        "questionInfos":[
+            {
+                "questionInfoNo":"000002",
+                "questionDescription":"楼板加曲翘不平整",
+                "checkUser":"赵小鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            }
+        ]
+    },
+    {
+        "subPrjectNo":"p0000005",
+        "subProjectName":"综合楼",
+        "problemCount":4,
+        "awaitRectification":0,
+        "questionInfos":[
+            {
+                "questionInfoNo":"000002",
+                "questionDescription":"楼板加曲翘不平整",
+                "checkUser":"赵小鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            },
+            {
+                "questionInfoNo":"000003",
+                "questionDescription":"存在曲翘不平整",
+                "checkUser":"李学鹏 2018.10.03",
+                "rectificationRequire":"——",
+                "rectificationUser":"周工 2018.11.10",
+                "state":"已处理",
+                "checkResult":"合格",
+                "accessory":"——",
+                "imgUrl":"images/quality_problem.png"
+            }
+        ]
+    }
+
+]
