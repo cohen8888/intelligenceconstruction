@@ -2,9 +2,9 @@
 (function(){
 	$("#global .container-fluid").load("./html/home.html");
 	$$.moduleHomeLoad = function(){
-		$$.ajax($$.baseUrl, $$.moduleUrls.home).then(res => {
-			let projectObj = res.data.projectInfo;
-			let dataObj = res.data.projectDataInfo;
+		function handler(data){
+			let projectObj = data.data.projectInfo;
+			let dataObj = data.data.projectDataInfo;
 			$('.prj-info-detail').get(0).innerHTML = projectObj.projectName;
 			$('.prj-info-detail').get(1).innerHTML = projectObj.developmentOrganization;
 			$('.prj-info-detail').get(2).innerHTML = projectObj.designOrganization;
@@ -23,6 +23,8 @@
 			$('.prj-data-info').get(4).innerHTML = dataObj.pm10;
 			$('.prj-data-info').get(5).innerHTML = dataObj.nose;
 			$('.prj-data-info').get(6).innerHTML = dataObj.windPower;
-		});
+		}
+		$$.ajax($$.baseUrl, $$.moduleUrls.home, handler);
+
 	}
 })();

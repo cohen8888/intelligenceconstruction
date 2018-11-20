@@ -9,6 +9,7 @@
             "home":"/api/home",
             "globalprogress":"/api/globalprogress",                                         //总体进度
             "planschedule":"/api/planschedule",                                             //计划进度
+            "projectprogress4milestone":"/api/projectprogress4milestone",                   //里程碑进度
             "projectprogress4comparison":"/api/projectprogress4comparison",                 //进度对比
             "quality4problemsummarizing":"/api/quality4problemsummarizing",                 //问题汇总
             "quality4pollingcheck":"/api/quality4pollingcheck",                             //质量巡检
@@ -26,36 +27,36 @@
         /**
         * 异步ajax获取数据的方法
         */
-        function ajax(baseUrl,file){
-            return new Promise((resolve,reject)=>{
-                let xhr = new XMLHttpRequest();
-                let url = !file ? baseUrl :  baseUrl + file;
-                xhr.open("get" ,url ,true);
-                xhr.send();
-                xhr.onreadystatechange = function(){
-                    if(xhr.readyState == 4){
-                        if(xhr.status == 200){
-                            resolve(JSON.parse(xhr.responseText));
-                        }else{
-                            reject(xhr.status);
-                        }
-                    }
-                }
-            })
-        }
-        // function ajax(baseUrl,file, fn){
-        //     let xhr = new XMLHttpRequest();
-        //     let url = !file ? baseUrl :  baseUrl + file;
-        //     xhr.open("get" ,url ,true);
-        //     xhr.send();
-        //     xhr.onreadystatechange = function(){
-        //         if(xhr.readyState == 4){
-        //             if(xhr.status == 200){
-        //                fn(JSON.parse(xhr.responseText));
+        // function ajax(baseUrl,file){
+        //     return new Promise((resolve,reject)=>{
+        //         let xhr = new XMLHttpRequest();
+        //         let url = !file ? baseUrl :  baseUrl + file;
+        //         xhr.open("get" ,url ,true);
+        //         xhr.send();
+        //         xhr.onreadystatechange = function(){
+        //             if(xhr.readyState == 4){
+        //                 if(xhr.status == 200){
+        //                     resolve(JSON.parse(xhr.responseText));
+        //                 }else{
+        //                     reject(xhr.status);
+        //                 }
         //             }
         //         }
-        //     }
+        //     })
         // }
+        function ajax(baseUrl,file, fn){
+            let xhr = new XMLHttpRequest();
+            let url = !file ? baseUrl :  baseUrl + file;
+            xhr.open("get" ,url ,true);
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                       fn(JSON.parse(xhr.responseText));
+                    }
+                }
+            }
+        }
         
 
 

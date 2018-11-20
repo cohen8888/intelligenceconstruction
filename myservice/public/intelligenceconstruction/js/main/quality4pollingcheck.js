@@ -4,23 +4,37 @@
  * date: 2018-11-14
  */
 
- (function(){
+(function () {
     let cacheData = {};
     let cacheDetails = [];
     let popMsgStr = "";
-    let popCoordinate = [
-        {left:'140px',top:'150px'},
-        {left:'240px',top:'300px'},
-        {left:'440px',top:'100px'},
-        {left:'640px',top:'330px'},
-        {left:'880px',top:'200px'},
+    let popCoordinate = [{
+            left: '140px',
+            top: '150px'
+        },
+        {
+            left: '240px',
+            top: '300px'
+        },
+        {
+            left: '440px',
+            top: '100px'
+        },
+        {
+            left: '640px',
+            top: '330px'
+        },
+        {
+            left: '880px',
+            top: '200px'
+        },
     ]
-    popMsgStr += `<div class="popup-message"><ul>`;
-    popMsgStr += `<li><span>子项名：</span><span class="pm_item">食堂</span></li>`;
-    popMsgStr += `<li><span>问题数：</span><span class="pm_item">5个</span></li>`
-    popMsgStr += `<li><span>待整改：</span><span class="pm_item">1个</span></li></ul></div>`;
+    popMsgStr += '<div class="popup-message"><ul>';
+    popMsgStr += '<li><span>子项名：</span><span class="pm_item">食堂</span></li>';
+    popMsgStr += '<li><span>问题数：</span><span class="pm_item">5个</span></li>';
+    popMsgStr += '<li><span>待整改：</span><span class="pm_item">1个</span></li></ul></div>';
 
-    function renderPopMsgDetails(data){
+    function renderPopMsgDetails(data) {
         console.log(data)
         let elems = $('.popup-message-detail .pm_detail');
         elems.get(0).innerHTML = data['questionDescription']
@@ -32,64 +46,64 @@
         elems.get(6).innerHTML = data['accessory']
     }
 
-    function renderQuestionInfo(rootElem, data){
-        if (rootElem){
+    function renderQuestionInfo(rootElem, data) {
+        if (rootElem) {
             rootElem.empty();
         }
-        
-        if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
-            data.forEach((item, index) => {
+        if (typeof data == 'object' && data instanceof Array && data.length > 0) {
+            for (let i = 0; i < data.length; i++) {
                 let str = "";
-                str += `<div class="row" data-index="${index}">`;
-                str += `<div class="info-img"><img src="${item['imgUrl']}"></div>`;
-                str += `<div class="info-msg"><div class="info-content">${item['questionDescription']}</div>`;
-                str += `<div class="info-tilte"><span>${item['checkUser']}</span></div></div></div>`;
+                str += '<div class="row" data-index="' + i + '">';
+                str += '<div class="info-img"><img src="' + data[i]['imgUrl'] + '"></div>';
+                str += '<div class="info-msg"><div class="info-content">' + data[i]['questionDescription'] + '</div>';
+                str += '<div class="info-tilte"><span>' + data[i]['checkUser'] + '</span></div></div></div>';
                 let newElem = $(str);
-                newElem.on('mouseover',function(event){
+                newElem.on('mouseover', function (event) {
                     $(this).css('background-color', '#0d0e1b').css('border', '0px');
-                    $('.popup-message-detail').css('display','block');
+                    $('.popup-message-detail').css('display', 'block');
                     console.log(cacheDetails[Number($(this).attr('data-index'))])
                     renderPopMsgDetails(cacheDetails[Number($(this).attr('data-index'))]);
                 });
-                newElem.on('mouseout',function(event){
+                newElem.on('mouseout', function (event) {
                     $(this).css('background-color', '#191a2d').css('border', '1px solid #7e7f89');
-                    $('.popup-message-detail').css('display','none');
+                    $('.popup-message-detail').css('display', 'none');
                 });
                 rootElem.append(newElem);
-            });
-        }else{
-            rootElem.html( `<div class="row">没有数据显示，请检查网络或者联系系统管理员！</div>`);
+            }
+        } else {
+            rootElem.html('<div class="row">没有数据显示，请检查网络或者联系系统管理员！</div>');
         }
     }
 
-    function renderPopMsg(rootElem, cloneTarget, data, left, top, index){
+    function renderPopMsg(rootElem, cloneTarget, data, left, top, index) {
 
         let newElem = cloneTarget.clone();
         newElem.attr('data-index', index);
-        newElem.on('click', function(event){
+        newElem.on('click', function (event) {
             cacheDetails = cacheData[Number($(this).attr('data-index'))]['questionInfos'];
             renderQuestionInfo($('.quality-polling-check .quality-polling-check-info .panel-body'), cacheData[Number($(this).attr('data-index'))]['questionInfos']);
         })
         newElem.find('.pm_item').get(0).innerHTML = data.subProjectName;
         newElem.find('.pm_item').get(1).innerHTML = data.problemCount + '个';
         newElem.find('.pm_item').get(2).innerHTML = data.awaitRectification + '个';
-        newElem.css('position', 'absolute').css('left',left).css('top', top).css('display','block');
+        newElem.css('position', 'absolute').css('left', left).css('top', top).css('display', 'block');
         rootElem.append(newElem);
     }
 
-    $$.moduleQualityPollingCheck = function (){
-        $$.ajax($$.baseUrl, $$.moduleUrls.quality4pollingcheck).then(res => {
-            cacheData = res.data;
-            res.data.forEach((elem, index) => {
+    $$.moduleQualityPollingCheck = function () {
+        function handler(data) {
+            cacheData = data.data;
+            for (let i = 0; i < data.data.length; i++){
                 renderPopMsg($('.quality-polling-check > .col-sm-8 > .panel-body'),
-                $(popMsgStr),
-                res.data[index],
-                popCoordinate[index]['left'],
-                popCoordinate[index]['top'],
-                index
+                    $(popMsgStr),
+                    data.data[i],
+                    popCoordinate[i]['left'],
+                    popCoordinate[i]['top'],
+                    i
                 );
-            });
-        });
+            }
+        }
+        $$.ajax($$.baseUrl, $$.moduleUrls.quality4pollingcheck, handler);
     }
 
- })()
+})()

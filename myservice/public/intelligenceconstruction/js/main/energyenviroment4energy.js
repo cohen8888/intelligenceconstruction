@@ -184,37 +184,39 @@
     }
 
     $$.moduleEnergyEnviromentEnergy = function(){
-        let chartPowerConsumption = echarts.init($('.power-chart').get(0));
-        let chartPowerConsumptionClassify = echarts.init($('.power-chart').get(1));
-        let chartPowerConsembleClassifyItem = echarts.init($('.power-chart').get(2));
-        let charWaterConsumption = echarts.init($('.water-chart').get(0));
-        let chartWaterConsumptionClassify = echarts.init($('.water-chart').get(1));
-        let chartWaterConsembleClassifyItem = echarts.init($('.water-chart').get(2));
-        $$.ajax($$.baseUrl, $$.moduleUrls.energyenviroment4energy).then(res => {
+        function handler(data){
+            let chartPowerConsumption = echarts.init($('.power-chart').get(0));
+            let chartPowerConsumptionClassify = echarts.init($('.power-chart').get(1));
+            let chartPowerConsembleClassifyItem = echarts.init($('.power-chart').get(2));
+            let charWaterConsumption = echarts.init($('.water-chart').get(0));
+            let chartWaterConsumptionClassify = echarts.init($('.water-chart').get(1));
+            let chartWaterConsembleClassifyItem = echarts.init($('.water-chart').get(2));
             renderConsumption(chartPowerConsumption, 
-                res.data.powerConsemble.ensemblePowerConsemble, 
+                data.data.powerConsemble.ensemblePowerConsemble, 
                 '总耗电量','#fbd481');
             renderConsumptionClassify(chartPowerConsumptionClassify,
-                res.data.powerConsemble.powerConsembleClassify,
+                data.data.powerConsemble.powerConsembleClassify,
                 '耗电分类',
                 powerConsumptionClassifyDatas);
             renderConsembleClassifyItem(chartPowerConsembleClassifyItem, 
-                res.data.powerConsemble.powerConsembleClassifyItem, 
+                data.data.powerConsemble.powerConsembleClassifyItem, 
                 '耗电分项', 
                 powerConsembleClassifyItemDatas);
             /////////////////////////////////////////////////////////////////////////
             renderConsumption(charWaterConsumption, 
-                res.data.waterConsemble.ensembleWaterConsemble, 
+                data.data.waterConsemble.ensembleWaterConsemble, 
                 '总耗水量','#6de9f5');
             renderConsumptionClassify(chartWaterConsumptionClassify,
-                res.data.waterConsemble.waterConsembleClassify,
+                data.data.waterConsemble.waterConsembleClassify,
                 '耗水分类',
                 waterConsumptionClassifyDatas);
             renderConsembleClassifyItem(chartWaterConsembleClassifyItem, 
-                res.data.waterConsemble.waterConsembleClassifyItem, 
+                data.data.waterConsemble.waterConsembleClassifyItem, 
                 '耗水分项', 
                 waterConsembleClassifyItemDatas);
-        });
+        }
+
+        $$.ajax($$.baseUrl, $$.moduleUrls.energyenviroment4energy, handler);
     }
 
 })()

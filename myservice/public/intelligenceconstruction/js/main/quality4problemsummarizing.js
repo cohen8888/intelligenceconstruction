@@ -54,11 +54,11 @@
                 },
                 formatter:function(name){
                     let result = "";
-                    chartDatas.forEach((elem, index) => {
-                        if (elem['name'] == name){
-                            result = name + ' ' + elem['value'] + '个';
+                    for(let i = 0; i < chartDatas.length; i++){
+                        if (chartDatas[i]['name'] == name){
+                            result = name + ' ' + chartDatas[i]['value'] + '个';
                         }
-                    })
+                    }
                     return result;
                 },
                 bottom: 5,
@@ -141,11 +141,11 @@
                 }, 
                 formatter:function(name){
                     let result = "";
-                    chartDatas.forEach((elem, index) => {
-                        if (elem['name'] == name){
-                            result = name + ' ' + elem['value'] + '个';
+                    for(let i = 0; i < chartDatas.length; i++){
+                        if (chartDatas[i]['name'] == name){
+                            result = name + ' ' + chartDatas[i]['value'] + '个';
                         }
-                    })
+                    }
                     return result;
                 },
                 bottom: 55,
@@ -190,11 +190,12 @@
         }
     }
     $$.moduleQualityProblemSummarizing = function(){
-        let mychart = echarts.init($('.quality-question-chart').get(0));
-        let mychart1 = echarts.init($('.quality-problem-classify').get(0));
-        $$.ajax($$.baseUrl, $$.moduleUrls.quality4problemsummarizing).then(res => {
-            generateQualityQuestionChart(mychart, res.data.qualityQuestionSummarizing);
-            generateQualityProblemClassifyChart(mychart1, res.data.qualityProblemClassify);
-        });
+        function handler(data){
+            let mychart = echarts.init($('.quality-question-chart').get(0));
+            let mychart1 = echarts.init($('.quality-problem-classify').get(0));
+            generateQualityQuestionChart(mychart, data.data.qualityQuestionSummarizing);
+            generateQualityProblemClassifyChart(mychart1, data.data.qualityProblemClassify);
+        }
+        $$.ajax($$.baseUrl, $$.moduleUrls.quality4problemsummarizing, handler);
     }
 })()

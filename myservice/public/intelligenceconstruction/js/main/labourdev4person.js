@@ -37,11 +37,11 @@
                 }, 
                 formatter:function(name){
                     let result = "";
-                    chartDatas.forEach((elem, index) => {
-                        if (elem['name'] == name){
-                            result = name + ' ' + elem['value'] + '个';
+                    for(let i = 0; i < chartDatas.length;i++){
+                        if (chartDatas[i]['name'] == name){
+                            result = name + ' ' + chartDatas[i]['value'] + '个';
                         }
-                    })
+                    }
                     return result;
                 },
                 bottom: 45,
@@ -85,38 +85,36 @@
             rootChart.setOption(option, true);
         }
      }
-    
-    
-    
+
     /**
       * 渲染人员管理表格信息
       */
      function renderTableInfo(rootElem, data){
         let str = "";
         if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
-            data.forEach((item, index) => {
-                str += `<tr>`;
-                str += `<td>${item['numNo']}</td>`;
-                str += `<td>${item['name']}</td>`;
-                str += `<td>${item['workNo']}</td>`;
-                str += `<td>${item['gender']}</td>`;
-                str +=`</tr>`;
-            });
+            for(let i = 0; i < data.length; i++){
+                str += '<tr>';
+                str += '<td>'+data[i]['numNo']+'</td>';
+                str += '<td>'+data[i]['name']+'</td>';
+                str += '<td>'+data[i]['workNo']+'</td>';
+                str += '<td>'+data[i]['gender']+'</td>';
+                str +='</tr>';
+            }
         }else{
-            str += `<tr><td colspan="3" style="text-align:center;">没有数据显示，请检查网络或者联系系统管理员！</td></tr>`;
+            str += '<tr><td colspan="3" style="text-align:center;">没有数据显示，请检查网络或者联系系统管理员！</td></tr>';
         }
         rootElem.html(str);
      }
-    
-    
+
     $$.moduleLabourdevPerson = function(){
-        let mychart = echarts.init($('#person-info').get(0));
-        $$.ajax($$.baseUrl, $$.moduleUrls.labourdev4person).then(res => {
-            generatePersonChart(mychart, res.data.localeWorkerDistribution);
-            renderTableInfo($('.labourdev-person-info .table tbody'), res.data.workerInfos);
-            $('#currentWorker').html(res.data.globalInfo.currentWorker);
-            $('#grandTotalWorker').html(res.data.globalInfo.grandTotalWorker);
-        });
+        function handler(data){
+            let mychart = echarts.init($('#person-info').get(0));
+            generatePersonChart(mychart, data.data.localeWorkerDistribution);
+            renderTableInfo($('.labourdev-person-info .table tbody'), data.data.workerInfos);
+            $('#currentWorker').html(data.data.globalInfo.currentWorker);
+            $('#grandTotalWorker').html(data.data.globalInfo.grandTotalWorker);
+        }
+        $$.ajax($$.baseUrl, $$.moduleUrls.labourdev4person, handler);
     }
 
 })()
