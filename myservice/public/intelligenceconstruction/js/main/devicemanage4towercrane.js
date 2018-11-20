@@ -7,6 +7,128 @@
  (function(){
 
     let cacheData = {};
+    let seriesData = [];
+    /**
+     * 渲染塔吊图形
+     * 
+     */
+    function renderTowercrane(rootElem, data){
+
+        //处理图表数据
+        var scaleData = [];
+        data.forEach((elem, index) => {
+            let obj = {};
+            obj.name = elem.name;
+            obj.value = (100 / data.length);
+            obj.state = elem.state;
+            scaleData.push(obj); 
+        });
+        //图标样式
+        var rich = {
+            white: {
+                color: '#ddd',
+                align: 'center',
+                padding: [5, 0]
+            }
+        };
+
+        var placeHolderStyle = {
+            normal: {
+                label: {
+                    show: true
+                },
+                labelLine: {
+                    show: true
+                },
+                color: 'rgba(0, 0, 0, 0)',
+                borderColor: 'rgba(0, 0, 0, 0)',
+                borderWidth: 0
+            }
+        };
+        
+        for (var i = 0; i < scaleData.length; i++) {
+            seriesData.push({
+                value: scaleData[i].value,
+                name: scaleData[i].name,
+                state:scaleData[i].state,
+                //visualMap: false,
+                itemStyle: {
+                    normal: {
+                        borderWidth: 3,
+                        shadowBlur: 50,
+                        shadowColor: 'rgba(142, 152, 241, 0.6)'
+                    },emphasis:{
+                        color:'#da7b55'
+                    }
+                },
+            }, {
+                value: 2,
+                name: '',
+                itemStyle: placeHolderStyle
+            });
+        }
+
+        var seriesObj = [{
+            name: '',
+            type: 'pie',
+            clockWise: false,
+            radius: ['55%', '80%'],
+            center:['50%', '50%'],
+            hoverAnimation: true,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        color: '#fff',
+                        formatter: function(params) {
+                            if(params.name != ''){
+                                return params.data.name + '\n状态：' + params.data.state;
+                            }else{
+                                return '';
+                            }
+                        },
+                        rich: rich
+                    },
+                    labelLine: {
+                        show: true
+                    }
+                }
+            },
+            data: seriesData
+        }];
+        //图形选项
+        let option = {
+            title: {
+                text: data.length + '个\n塔吊监测点位置',
+                left:'center',
+                x:'center',
+                y:'center',
+                padding:[24, 0],
+                textStyle:{
+                    color:'#fff',
+                    fontSize:18,
+                    align:'center'
+                }
+            },
+            tooltip: {
+                show: false
+            },
+            legend: {
+                show: false
+            },
+            color:['#2fe2f0','#2fe2f0','#2fe2f0','#2fe2f0','#2fe2f0'],
+            toolbox: {
+                show: false
+            },
+            series: seriesObj
+        }
+
+        if (option && typeof option === "object") {
+            rootElem.setOption(option, true);
+        }
+    }
+
 
     /**
      * 渲染塔吊基本信息
@@ -30,7 +152,9 @@
     }
 
     $$.moduleDevicemanageTowercrane = function(){
+        let mychart = echarts.init($('#towercrane-chart').get(0));
         $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4towercrane).then((res)=>{
+            renderTowercrane(mychart, res.data.towerCraneInfo);
             renderTowerCraneTableInfo($('.tower-crane-table .table tbody'), res.data.towerCraneInfo);
             $('.tower-crane-table table').on('mouseover', function(event){
                 let key = event.target.parentNode.getAttribute('data-name');

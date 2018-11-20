@@ -10,7 +10,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月02日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"塔吊2",
@@ -19,7 +20,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月12日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"塔吊3",
@@ -28,7 +30,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月01日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"塔吊4",
@@ -37,7 +40,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月06日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"塔吊5",
@@ -46,7 +50,18 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月12日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
+        },
+        {
+            "name":"塔吊5",
+            "model":"1036",
+            "manufacturer":"——",
+            "linker":"乔工",
+            "linkerPhone":"13912345678",
+            "checkDate":"2018年11月12日 14:20",
+            "checkUser":"乔工",
+            "state":"良好"
         }
     ]
 }

@@ -81,7 +81,6 @@
         $$.ajax($$.baseUrl, $$.moduleUrls.quality4pollingcheck).then(res => {
             cacheData = res.data;
             res.data.forEach((elem, index) => {
-                console.log(cacheData)
                 renderPopMsg($('.quality-polling-check > .col-sm-8 > .panel-body'),
                 $(popMsgStr),
                 res.data[index],

@@ -8,29 +8,152 @@
 
 
     let cacheData = {};
+    let seriesData = [];
+    /**
+     * 渲染塔吊图形
+     * 
+     */
+    function renderlift(rootElem, data){
 
-/**
-  * 渲染塔吊基本信息
-  */
- function renderLiftTableInfo(rootElem, data){
-    let str = "";
-    if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
-        data.forEach((item, index) => {
-            cacheData[item['name']] = item;
-            str += `<tr data-name="${item['name']}">`;
-            str += `<td>${item['name']}</td>`;
-            str += `<td>${item['model']}</td>`;
-            str += `<td>${item['manufacturer']}</td>`;
-            str += `<td>${item['linker']}</td>`;
-            str +=`</tr>`;
+        //处理图表数据
+        var scaleData = [];
+        data.forEach((elem, index) => {
+            let obj = {};
+            obj.name = elem.name;
+            obj.value = (100 / data.length);
+            obj.state = elem.state;
+            scaleData.push(obj); 
         });
-    }else{
-        str += `<tr><td colspan="3" style="text-align:center;">没有数据显示，请检查网络或者联系系统管理员！</td></tr>`;
+        //图标样式
+        var rich = {
+            white: {
+                color: '#ddd',
+                align: 'center',
+                padding: [5, 0]
+            }
+        };
+
+        var placeHolderStyle = {
+            normal: {
+                label: {
+                    show: true
+                },
+                labelLine: {
+                    show: true
+                },
+                color: 'rgba(0, 0, 0, 0)',
+                borderColor: 'rgba(0, 0, 0, 0)',
+                borderWidth: 0
+            }
+        };
+        
+        for (var i = 0; i < scaleData.length; i++) {
+            seriesData.push({
+                value: scaleData[i].value,
+                name: scaleData[i].name,
+                state:scaleData[i].state,
+                //visualMap: false,
+                itemStyle: {
+                    normal: {
+                        borderWidth: 3,
+                        shadowBlur: 50,
+                        shadowColor: 'rgba(142, 152, 241, 0.6)'
+                    },emphasis:{
+                        color:'#da7b55'
+                    }
+                },
+            }, {
+                value: 2,
+                name: '',
+                itemStyle: placeHolderStyle
+            });
+        }
+
+        var seriesObj = [{
+            name: '',
+            type: 'pie',
+            clockWise: false,
+            radius: ['55%', '80%'],
+            center:['50%', '50%'],
+            hoverAnimation: true,
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        color: '#fff',
+                        formatter: function(params) {
+                            if(params.name != ''){
+                                return params.data.name + '\n状态：' + params.data.state;
+                            }else{
+                                return '';
+                            }
+                        },
+                        rich: rich
+                    },
+                    labelLine: {
+                        show: true
+                    }
+                }
+            },
+            data: seriesData
+        }];
+        //图形选项
+        let option = {
+            title: {
+                text: data.length + '个\n升降机监测点位置',
+                left:'center',
+                x:'center',
+                y:'center',
+                padding:[24, 0],
+                textStyle:{
+                    color:'#fff',
+                    fontSize:18,
+                    align:'center'
+                }
+            },
+            tooltip: {
+                show: false
+            },
+            legend: {
+                show: false
+            },
+            color:['#2fe2f0','#2fe2f0','#2fe2f0','#2fe2f0','#2fe2f0'],
+            toolbox: {
+                show: false
+            },
+            series: seriesObj
+        }
+
+        if (option && typeof option === "object") {
+            rootElem.setOption(option, true);
+        }
     }
-    rootElem.html(str);
- }
+
+    /**
+     * 渲染塔吊基本信息
+     */
+    function renderLiftTableInfo(rootElem, data){
+        let str = "";
+        if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
+            data.forEach((item, index) => {
+                cacheData[item['name']] = item;
+                str += `<tr data-name="${item['name']}">`;
+                str += `<td>${item['name']}</td>`;
+                str += `<td>${item['model']}</td>`;
+                str += `<td>${item['manufacturer']}</td>`;
+                str += `<td>${item['linker']}</td>`;
+                str +=`</tr>`;
+            });
+        }else{
+            str += `<tr><td colspan="3" style="text-align:center;">没有数据显示，请检查网络或者联系系统管理员！</td></tr>`;
+        }
+        rootElem.html(str);
+    }
     $$.moduleDeviceManageLift = function(){
-        $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4lift).then((res)=>{
+        $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4lift).then( (res) => {
+            let mychart = echarts.init($('#lift-chart').get(0));
+            renderlift(mychart, res.data.liftInfo);
             renderLiftTableInfo($('.dev-manage-lift-title-info .table tbody'), res.data.liftInfo);
             $('.dev-manage-lift-title-info table').on('mouseover', function(event){
                 let key = event.target.parentNode.getAttribute('data-name');

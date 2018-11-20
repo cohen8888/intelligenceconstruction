@@ -43,6 +43,22 @@
                 }
             })
         }
+        // function ajax(baseUrl,file, fn){
+        //     let xhr = new XMLHttpRequest();
+        //     let url = !file ? baseUrl :  baseUrl + file;
+        //     xhr.open("get" ,url ,true);
+        //     xhr.send();
+        //     xhr.onreadystatechange = function(){
+        //         if(xhr.readyState == 4){
+        //             if(xhr.status == 200){
+        //                fn(JSON.parse(xhr.responseText));
+        //             }
+        //         }
+        //     }
+        // }
+        
+
+
 
         window.$$ = {};
         window.$$.baseUrl = baseUrl;

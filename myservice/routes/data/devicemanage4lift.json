@@ -10,7 +10,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年10月02日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"升降机2",
@@ -19,7 +20,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年10月12日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"升降机3",
@@ -28,7 +30,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年10月21日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"升降机4",
@@ -37,7 +40,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月06日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         },
         {
             "name":"升降机5",
@@ -46,7 +50,8 @@
             "linker":"乔工",
             "linkerPhone":"13912345678",
             "checkDate":"2018年11月12日 14:20",
-            "checkUser":"乔工"
+            "checkUser":"乔工",
+            "state":"良好"
         }
     ]
 }

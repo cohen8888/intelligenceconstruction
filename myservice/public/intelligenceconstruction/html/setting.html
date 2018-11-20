@@ -1,1 +1,34 @@
-系统设置
+<style>
+    .setting .basic-title {
+        padding: 0 0 29px 29px;
+    }
+    .setting li {
+        font-size:14px;
+        padding:29px;
+        border-bottom: 1px solid #2d3b5c;
+        color:#9d9d9f;
+    }
+    .setting li:last-child span {
+        display: inline-block;
+        width: 100px;
+    }
+    .setting li:last-child span:last-child {
+        float:right;
+        width:200px;
+        text-align: right;
+    }
+</style>
+<div class="row setting">
+    <div class="panel panel-default">
+        <div class="panel-heading title">
+            <div class="text-left">系统设置</div>    
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li class="basic-title">基本信息</li>
+                <li><span>BIP账号</span><span></span></li>
+                <li><span>登录密码</span><span><a href="#">修改</a></span><span><b style="color:red">*</b>用于保护账户安全</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
