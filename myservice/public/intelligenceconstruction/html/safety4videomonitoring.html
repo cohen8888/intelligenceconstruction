@@ -1,7 +1,7 @@
 <!-- 质量管理——视频监控 -->
 <div class="row">
 	<div class="col-sm-8">
-        <div class="panel-heading safty-video-monitoring-title">
+        <div class="panel-heading title">
 			<div class="text-left">视频监控</div>
 		</div>
         <div class="panel-body">
@@ -10,7 +10,7 @@
 	</div>
 	<div class="col-sm-4">
 		<div class="panel panel-default safty-video-monitoring-info">
-			<div class="panel-heading safty-video-monitoring-title">
+			<div class="panel-heading title">
 				<div class="text-left">监控信息</div>
 			</div>
 			<div class="panel-body">
@@ -19,5 +19,8 @@
 		</div>
 	</div>
 </div>
-<script src="js/lib/echarts.js"></script>
-<script src="js/main/safety4videomonitoring.js"></script>
+<script>
+	$$.moduleVideoMonitoring();
+	$('#gisDiv').css('position', 'absolute').css('left', '240px').css('top','160px');
+	$('#gisDiv img').css('width', '1083px').css('height', '890px');
+</script>

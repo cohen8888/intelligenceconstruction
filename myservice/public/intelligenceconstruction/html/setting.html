@@ -17,6 +17,7 @@
         width:200px;
         text-align: right;
     }
+    
 </style>
 <div class="row setting">
     <div class="panel panel-default">
@@ -27,8 +28,17 @@
             <ul>
                 <li class="basic-title">基本信息</li>
                 <li><span>BIP账号</span><span></span></li>
-                <li><span>登录密码</span><span><a href="#">修改</a></span><span><b style="color:red">*</b>用于保护账户安全</span></li>
+                <li>
+                    <span>登录密码</span>
+                    <span><a id="demo01" href="#animatedModal">修改</a></span>
+                    <span><b style="color:red">*</b>用于保护账户安全</span>
+                </li>
             </ul>
         </div>
     </div>
 </div>
+<script>
+    $('#gisDiv').css('left', '-1240px');
+    $("#demo01").animatedModal();
+    $('.modal-content').css('display', 'block')
+</script>

@@ -1,6 +1,7 @@
 
 (function(){
 	$("#global .container-fluid").load("./html/home.html");
+	
 	$$.moduleHomeLoad = function(){
 		function handler(data){
 			let projectObj = data.data.projectInfo;

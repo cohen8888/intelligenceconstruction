@@ -17,7 +17,6 @@
         seriesData = [];
         //处理图表数据
         var scaleData = [];
-        console.log(data);
         for(let i = 0; i < data.length;i++){
             
             let obj = {};
@@ -26,7 +25,6 @@
             obj.state = data[i].state;
             scaleData.push(obj); 
         }
-       console.log(scaleData)
         //图标样式
         var rich = {
             white: {

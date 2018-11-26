@@ -294,6 +294,9 @@
 }
 
 /* 安全管理——安全巡检 */
+.safetydev-pollingcheck-questionsummarizing .col-sm-4 .panel-body{
+    height:891px;
+}
 .btn-normal{
     vertical-align:middle;
     background: #1f2039;
@@ -424,11 +427,15 @@
     float: right;
     margin-right: 45px;
  }
- .energyenviroment-enviroment .panel-body {
+.energyenviroment-enviroment .panel-body {
     height: 373px;
 }
 
 /* 劳务实名管理——人员管理 */
+.labourdev-person .col-sm-4 .panel-body {
+    height: 391px;
+}
+
 .labourdev-person .row > .col-sm-4 > .labourdev-person-info > .panel-body > .table > tbody > tr > td{
     padding:21px 5px;
 }
@@ -469,10 +476,6 @@
     padding-right: 10px;
 }
 
-.labourdev-person .col-sm-4 .panel-body {
-    height:373px;
-}
-
 .labourdev-person .btn-normal{
     vertical-align:middle;
     color:#ffffff;
@@ -497,7 +500,9 @@
 }
 
 /* 劳务实名制管理——实名制门禁 */
-
+.labourdev-entranceguard .col-sm-4 .panel-body {
+    height: 781px;
+}
 .labourdev-entranceguard .row > .col-sm-4 > .labour-entranceguard-info > .panel-body > .table > tbody > tr > td{
     padding:21px 5px;
 }
@@ -574,4 +579,79 @@
 
 .infomationdev-content .title {
     color:#1f2039;
+} 
+.zTreeDemoBackground {
+    color:#ffffff;
 }
+
+/* 系统设置 */
+#animatedModal {
+    opacity: 0.5!important;
+    background: #191a2d!important;
+}
+
+.modal-content ul {
+    padding:0;
+    list-style-type: none;
+}
+.modal-content .password-update-title{
+    font-size: 24px;
+    text-align: center;
+}
+.modal-content ul li {
+    padding: 10px 20px;
+}
+
+.modal-content input {
+    width: 230px;
+    height:30px;
+    border: 1px solid #2d3b5c;
+    padding:0 3px;
+    background: #222a41;
+
+}
+
+.modal-content input:focus {
+    border: 1px solid #cccccc;
+    padding:0 3px;
+}
+.modal-content ul li span{
+    display: inline-block;
+}
+.modal-content ul li span:first-child{
+    width:35%;
+    text-align: right;
+}
+.modal-content ul li span:last-child{
+    width:65%;
+    text-align: left;
+}
+.modal-content ul li:last-child span{
+    width:50%;
+    float: left;
+    text-align: center;
+}
+
+.modal-content {
+    background: #222a41;
+    position:relative;
+    color:#ffffff;
+    z-index:9999;
+    top:50%;
+    left:50%;
+    width:464px; /* 按需改变数值 */
+    height:310px; /* 按需改变数值 */
+    margin-top:-160px; /* height数值的一半 */
+    margin-left:-232px; /* width数值的一半 */
+    -webkit-box-shadow:0 0 3px rgba(0,0,0,.2);
+    -moz-box-shadow:0 0 3px rgba(0,0,0,.2);
+    box-shadow:0 0 3px rgba(0,0,0,.2);
+    padding:10px;
+    display: none;
+}
+
+#gisDiv{
+    position: absolute;
+}
+
+

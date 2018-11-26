@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/small-n-flat.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" href="css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/zTreeStyle.css">
     <title>智能工地管理平台</title>
 </head>
 
@@ -114,7 +116,28 @@
     <div id="global">
         <div class="container-fluid">
         </div>
-        <!-- <footer class="cm-footer"><span class="pull-left">Connected as John Smith</span><span class="pull-right">&copy; PAOMEDIA SARL</span></footer> -->
+    </div>
+    <div id="gisDiv">
+        <img src="images/devmanage_main.png" alt="">
+        <!-- <object id="renderControl" type="application/x-cm-3d8" style="height: 890px; width: 782px;"></object>		 -->
+    </div>
+    <div id="animatedModal">      
+        <div class="modal-content">
+            <ul>
+                <li class="password-update-title">修改密码</li>
+                <li><span>原来密码：</span><span><input type="password"></span></li>
+                <li><span>新密码：</span><span><input type="password" placeholder="密码包含6-16位字母、数字"></span></li>
+                <li><span>确认新密码：</span><span><input type="password" placeholder="请再次输入新密码."></span></li>
+                <li>
+                    <span>
+                        <button class="btn btn-danger btn-lg">确认</button>
+                    </span>
+                    <span>
+                        <button id="btn-close-modal" class="btn btn-warning btn-lg close-animatedModal">取消</button>
+                    </span>
+                </li>
+            </ul>
+        </div>
     </div>
     <script src="js/lib/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
@@ -137,12 +160,15 @@
     <script src="js/main/quality4craft.js"></script>                            <!-- 重点工艺 -->
     <script src="js/main/safety4pollingcheck.js"></script>                      <!-- 安全巡检 -->
     <script src="js/main/safety4fireprotection.js"></script>                    <!-- 消防管理 -->
+    <script src="js/main/safety4videomonitoring.js"></script>                   <!-- 视频监控 -->
     <script src="js/main/devicemanage4towercrane.js"></script>                  <!-- 塔吊 -->
     <script src="js/main/devicemanage4lift.js"></script>                        <!-- 升降机 -->
     <script src="js/main/energyenviroment4energy.js"></script>                  <!-- 能量管理-->
     <script src="js/main/energyenviroment4enviroment.js"></script>              <!-- 环境管理-->
     <script src="js/main/labourdev4person.js"></script>                         <!-- 人员管理-->
     <script src="js/main/labourdev4entranceguard.js"></script>                  <!-- 实名制门禁-->
+    <script type="text/javascript" src="webgis_3d/js/citymaker/cm7.js"></script>
+    <script type="text/javascript" src="webgis_3d/js/map3d.js"></script>
+    <script src="js/animatedModal.min.js"></script>
 </body>
-
 </html>

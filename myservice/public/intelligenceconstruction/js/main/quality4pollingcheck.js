@@ -35,7 +35,6 @@
     popMsgStr += '<li><span>待整改：</span><span class="pm_item">1个</span></li></ul></div>';
 
     function renderPopMsgDetails(data) {
-        console.log(data)
         let elems = $('.popup-message-detail .pm_detail');
         elems.get(0).innerHTML = data['questionDescription']
         elems.get(1).innerHTML = data['checkUser']
@@ -61,7 +60,6 @@
                 newElem.on('mouseover', function (event) {
                     $(this).css('background-color', '#0d0e1b').css('border', '0px');
                     $('.popup-message-detail').css('display', 'block');
-                    console.log(cacheDetails[Number($(this).attr('data-index'))])
                     renderPopMsgDetails(cacheDetails[Number($(this).attr('data-index'))]);
                 });
                 newElem.on('mouseout', function (event) {

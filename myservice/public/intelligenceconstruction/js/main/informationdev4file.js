@@ -41,7 +41,13 @@ var zNodes =[
     { id:3, pId:0, name:"父节点 3", open:true},
     { id:31, pId:3, name:"叶子节点 3-1"},
     { id:32, pId:3, name:"叶子节点 3-2"},
-    { id:33, pId:3, name:"叶子节点 3-3"}
+    { id:33, pId:3, name:"叶子节点 3-3"},
+    { id:4, pId:0, name:"父节点 4", open:true},
+    { id:41, pId:4, name:"叶子节点 4-1"},
+    { id:411, pId:5, name:"叶子节点 4-1"},
+    { id:42, pId:4, name:"叶子节点 4-2"},
+    { id:43, pId:4, name:"叶子节点 4-3"},
+    { id:5, pId:0, name:"父节点 5", open:true},
 ];
 var log, className = "dark";
 function beforeDrag(treeId, treeNodes) {
