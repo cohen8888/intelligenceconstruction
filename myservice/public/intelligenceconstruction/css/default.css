@@ -1,0 +1,61 @@
+
+div.nav-box{
+	width: 90%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.nav{
+	width: 490px;
+	height: 380px;
+	background:url(../img/images/start_img01.jpg) center center no-repeat;
+	background-size: 150%;
+	transition: all 0.5s ease-in-out;
+}
+.nav:hover{
+	background:url(../img/images/start_img02.jpg) center center no-repeat;
+	background-size: 170%;
+}
+.nav-2{
+	width: 490px;
+	height: 380px;
+	background:url(../img/images/start_img11.jpg) center center no-repeat;
+	background-size: 150%;
+	transition: all 0.5s ease-in-out;
+}
+.nav-2:hover {
+	background-size: 170%;
+}
+
+.nav-3{
+	width: 490px;
+	height: 380px;
+	background:url(../img/images/start_img21.jpg) center center no-repeat;
+	background-size: 150%;
+	transition: all 0.5s ease-in-out;
+}
+.nav-3:hover {
+	background:url(../img/images/start_img22.jpg) center center no-repeat;
+	background-size: 170%;
+}
+
+.nav-mask{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(25,90,140,0.65);
+	text-align: center;
+}
+.nav-mask>img{
+	margin-top:100px;	
+	margin-bottom:20px;	
+}
+.nav-title{
+	color: white;
+	font-size: 40px;
+}

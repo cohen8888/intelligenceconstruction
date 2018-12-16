@@ -1,3 +1,48 @@
+<style>
+	.tower-crane-info {
+		/* display:none; */
+	}
+	.tower-crane-info-add {
+		 display:none;
+		 height: 819px!important;
+	}
+	.tower-crane-info-add ul {
+		padding:0;
+	}
+	.towercrane-info-input {
+		background: #191a2d;
+		border-radius: 3px;
+		border: 1px #8e8f9b solid;
+		padding-left: 3%;
+		height: 32px;
+		width: 80%;
+	}
+	.tower-crane-forminfo li span{
+		display: inline-block;
+		padding: 10px 0px;	
+	}
+	.tower-crane-forminfo li span:first-child{
+		width:20%;
+		text-align: right;
+	}
+	.tower-crane-forminfo li span:last-child{
+		width:80%;
+	}
+	.tower-crane-forminfo li:last-child span{
+		width:50%;
+	}
+	.tower-crane-forminfo li:last-child button{
+		width:90px;
+		height: 32px;
+		border: none;
+		background-repeat: no-repeat;
+		background-image: url('images/btn_bg.png');
+	}
+	
+	.tower-crane-forminfo li:last-child span{
+		text-align: center;
+	}
+</style>
 <!-- 设备管理——塔吊 -->
 <div class="row devicemanage-towercrane">
 	<div class="col-sm-8">
@@ -25,6 +70,9 @@
 		<div class="panel panel-default tower-crane-info">
 			<div class="panel-heading title">
 				<div class="text-left">基本信息：</div>
+				<div class="text-right">
+					<button>添加</button>
+				</div>
 			</div>
 			<div class="panel-body">
 				<!-- <img src="images/devmanage_top.png" style="width: 100%;height: 100%;" /> -->
@@ -45,10 +93,37 @@
 				</table>
 			</div>
 		</div>
+		<div class="panel panel-default tower-crane-info-add">
+			<div class="panel-heading title">
+				<div class="text-left">塔吊信息：</div>
+			</div>
+			<div class="panel-body">
+				<ul class="tower-crane-forminfo">
+					<li><span>名称：</span><span><input class="towercrane-info-input" name="name" type="text"></span></li>
+					<li><span>型号：</span><span><input class="towercrane-info-input" name="model" type="text"></span></li>
+					<li><span>厂商：</span><span><input class="towercrane-info-input" name="manufacturer" type="text"></span></li>
+					<li><span>联系人：</span><span><input class="towercrane-info-input" name="linker" type="text"></span></li>
+					<li><span>联系方式：</span><span><input class="towercrane-info-input" name="linkerPhone" type="text"></span></li>
+					<li><span>巡检日期：</span><span><input class="towercrane-info-input" name="linker" type="text"></span></li>
+					<li><span>巡检人：</span><span><input class="towercrane-info-input" name="linker" type="text"></span></li>
+					<li><span>状态：</span><span><input class="towercrane-info-input" name="linker" type="text"></span></li>
+					<li><span><button>确定</button></span><span><button>退出</button></span></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
+
 <script>
+	$(".tower-crane-info .panel-heading button").on('click', function(){
+		$('.tower-crane-info').css('display','none');
+		$('.tower-crane-info-add').css('display','block');
+	});
+	$(".tower-crane-info-add .panel-body button:last-child").on('click', function(){
+		$('.tower-crane-info').css('display','block');
+		$('.tower-crane-info-add').css('display','none');
+	});
 	$$.moduleDevicemanageTowercrane();
 	$('#gisDiv').css('position', 'absolute').css('left', '240px').css('top','160px');
-	$('#gisDiv img').css('width', '1082px').css('height', '890px');
+	$('#gisDiv #renderControl').css('width', '1082px').css('height', '890px');
 </script>

@@ -1,0 +1,74 @@
+{
+    "AllWorkerTypeNumList": [
+        {
+            "code": "G404",
+            "name": "塔吊指挥（信号工）",
+            "currentCount": 2,
+            "presentCount": 2
+        },
+        {
+            "code": "G403",
+            "name": "塔吊司机（起重工）",
+            "currentCount": 4,
+            "presentCount": 4
+        },
+        {
+            "code": "G407",
+            "name": "木工",
+            "currentCount": 44,
+            "presentCount": 51
+        },
+        {
+            "code": "G419",
+            "name": "消防安装工",
+            "currentCount": 0,
+            "presentCount": 1
+        },
+        {
+            "code": "020",
+            "name": "钢筋工",
+            "currentCount": 17,
+            "presentCount": 19
+        },
+        {
+            "code": "040",
+            "name": "混凝土工",
+            "currentCount": 3,
+            "presentCount": 4
+        },
+        {
+            "code": "G412",
+            "name": "分包管理人员",
+            "currentCount": 3,
+            "presentCount": 6
+        },
+        {
+            "code": "G451",
+            "name": "其他",
+            "currentCount": 0,
+            "presentCount": 1
+        },
+        {
+            "code": "130",
+            "name": "电工",
+            "currentCount": 2,
+            "presentCount": 2
+        },
+        {
+            "code": "G452",
+            "name": "水电工",
+            "currentCount": 1,
+            "presentCount": 1
+        },
+        {
+            "code": "G411",
+            "name": "杂工",
+            "currentCount": 6,
+            "presentCount": 6
+        }
+    ],
+    "globalInfo": {
+        "grandTotalWorker": 97,
+        "currentWorker": 82
+    }
+}

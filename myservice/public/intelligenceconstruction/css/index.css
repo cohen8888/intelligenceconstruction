@@ -183,7 +183,9 @@
 }
 
 /* 进度管理——里程碑进度 */
-
+.projectprogress-milestone {
+    margin-left: 9px;
+}
 .projectprogress-milestone .panel-body {
     height: 416px;
 }
@@ -361,6 +363,19 @@
 }
 
 /* 设备管理——塔吊 */
+.tower-crane-info .title .text-left{
+    float:left;
+}
+.tower-crane-info .title .text-right{
+    float:right;
+}
+.tower-crane-info .title .text-right > button {
+    width:90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
 .devicemanage-towercrane .col-sm-4 .panel-body{
     height: 419px;
 }
@@ -587,7 +602,31 @@
 /* 系统设置 */
 #animatedModal {
     opacity: 0.5!important;
-    background: #191a2d!important;
+    background: #11121f!important;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+}
+
+.modal-content {
+    background: #222a41;
+    position:relative;
+    color:#ffffff;
+    z-index:9999;
+    top:50%;
+    left:50%;
+    width:464px; /* 按需改变数值 */
+    height:310px; /* 按需改变数值 */
+    margin-top:-160px; /* height数值的一半 */
+    margin-left:-232px; /* width数值的一半 */
+    -webkit-box-shadow:0 0 3px rgba(0,0,0,.2);
+    -moz-box-shadow:0 0 3px rgba(0,0,0,.2);
+    box-shadow:0 0 3px rgba(0,0,0,.2);
+    padding:10px;
 }
 
 .modal-content ul {
@@ -608,7 +647,6 @@
     border: 1px solid #2d3b5c;
     padding:0 3px;
     background: #222a41;
-
 }
 
 .modal-content input:focus {
@@ -630,24 +668,6 @@
     width:50%;
     float: left;
     text-align: center;
-}
-
-.modal-content {
-    background: #222a41;
-    position:relative;
-    color:#ffffff;
-    z-index:9999;
-    top:50%;
-    left:50%;
-    width:464px; /* 按需改变数值 */
-    height:310px; /* 按需改变数值 */
-    margin-top:-160px; /* height数值的一半 */
-    margin-left:-232px; /* width数值的一半 */
-    -webkit-box-shadow:0 0 3px rgba(0,0,0,.2);
-    -moz-box-shadow:0 0 3px rgba(0,0,0,.2);
-    box-shadow:0 0 3px rgba(0,0,0,.2);
-    padding:10px;
-    display: none;
 }
 
 #gisDiv{

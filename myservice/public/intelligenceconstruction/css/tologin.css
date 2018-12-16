@@ -1,0 +1,24 @@
+.f-en{
+	color: white;
+	font-size: 65px;
+	margin-top: 10px;
+}
+.f-zh{
+	color: white;
+	margin-top: 10px;
+	font-size: 75px;
+	letter-spacing: 20px;
+}
+center{
+	margin-top: 11%;
+}
+#toLogin{
+	width: 330px;
+	height: 66px;
+	border-radius: 30px;
+	margin-top: 85px;
+	border: 0;
+	background:linear-gradient(to right,#0067ac 10% ,#143371);
+	color: white;
+	font-size: 25px;
+}

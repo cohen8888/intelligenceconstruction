@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="header">
+				<img src="img/images/logo_index_01.png" />
+				<span>智慧工地管理平台</span>
+			</div>
+			<div class="content">
+				<center>
+					<h1>登录</h1>
+					<div class="entry">
+						<label>
+							<span class="username-title">账号</span><br />
+							<input type="text" id="userName" placeholder="账号" onfocus="this.placeholder=''" onblur="placeholder='账号'" value="" />
+						</label><span class="username-prompt" ></span>
+					</div>
+					<div class="entry">
+						<label>
+							<span class="pwd-title">密码</span><br />
+							<input type="password" id="pwd" placeholder="密码" onfocus="this.placeholder=''" onblur="placeholder='密码'" value="" />
+						</label><span class="pwd-prompt"></span>
+					</div>
+					<div class="entry-checkbox">
+						<label>
+							<input type="checkbox" name="remenber" id="remenber" value="" />记住账号
+						</label>
+					</div>
+					<button id="toLogin">登录</button>
+				</center>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js" ></script>
+	<script src="js/jquery.cookie.min.js"></script>
+	<script src="js/main/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#userName").focus(function(){
+				$(".username-title").css("visibility","visible");
+			})
+			$("#userName").blur(function(){
+				if(this.value!=""){
+					$(".username-title").css("visibility","visible");
+				}else{
+					$(".username-title").css("visibility","hidden");
+				}
+			})
+			$("#pwd").focus(function(){
+					$(".pwd-title").css("visibility","visible");
+			})
+			$("#pwd").blur(function(){
+				if(this.value!=""){
+					$(".pwd-title").css("visibility","visible");
+				}else{
+					$(".pwd-title").css("visibility","hidden");
+				}
+			})
+
+			$("#userName").on('keydown', function(){
+				$(".username-prompt").css("display","none");
+			});
+			$("#pwd").on('keydown', function(){
+				$(".pwd-prompt").css("display","none");
+			});
+			$("#toLogin").on('click', function(event){
+				let loginData = {};
+				loginData.staffName = $("#userName").val();
+				loginData.password = $("#pwd").val();
+				$.ajax({
+					url:$$.baseUrl + $$.moduleUrls.login,
+					data:loginData,
+					dataType:"json",
+					method: "post",
+					success:function(data){
+						if (data.status == '100000'){
+							$.cookie("uid", data.status);
+							$(window).attr('location',$$.baseUrl + $$.moduleUrls.loginSuccess);
+						}else if (data.status == '100002'){
+							$('.username-prompt').css("display","inline").html('此用户不存在');
+						}else if(data.status == '100003'){
+							$('.pwd-prompt').css("display","inline").html('密码不正确');
+						}
+					}
+				});
+			})
+		});
+		
+	</script>
+
+</html>

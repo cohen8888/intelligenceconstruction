@@ -139,7 +139,7 @@
         let str = "";
         if (typeof data == 'object' && data instanceof Array && data.length > 0) {
             for (let i = 0; i < data.length; i++) {
-                cacheData[data[i]['name']] = item;
+                cacheData[data[i]['name']] = data[i];
                 str += "<tr data-name='" + data[i]['name'] + "'>";
                 str += "<td>" + data[i]['name'] + "</td>";
                 str += "<td>" + data[i]['model'] + "</td>";
@@ -154,14 +154,14 @@
     }
     $$.moduleDeviceManageLift = function () {
         function handler(data) {
+            let getAllElevatorInfoData = data.data.liftInfo;
             let mychart = echarts.init($('#lift-chart').get(0));
             renderlift(mychart, data.data.liftInfo);
-            renderLiftTableInfo($('.dev-manage-lift-title-info .table tbody'), data.data.liftInfo);
+            renderLiftTableInfo($('.dev-manage-lift-title-info .table tbody'), getAllElevatorInfoData);
             $('.dev-manage-lift-title-info table').on('mouseover', function (event) {
                 let key = event.target.parentNode.getAttribute('data-name');
                 if (key) {
                     let str = "";
-                    //str += "<div class="popup-message">";
                     str += "<ul>";
                     str += "<li class='popup-title'>基本信息</li>";
                     str += "<li><span>名称：</span><span>" + cacheData[key]['name'] + "</span></li>";
@@ -184,7 +184,7 @@
             });
         }
 
-        $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4lift, handler);
+        $$.ajax($$.baseUrl, $$.moduleUrls.getAllElevatorInfo, handler);
     }
 
 })()

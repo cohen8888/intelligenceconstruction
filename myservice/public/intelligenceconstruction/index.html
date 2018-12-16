@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/small-n-flat.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/zTreeStyle.css">
     <title>智能工地管理平台</title>
 </head>
@@ -23,8 +21,6 @@
             <div class="cm-flex">
                 <a href="index.html" class="cm-logo"></a>
             </div>
-        <!-- 
-            <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div> -->
         </nav>
         <div id="cm-menu-content">
             <div id="cm-menu-items-wrapper">
@@ -118,10 +114,10 @@
         </div>
     </div>
     <div id="gisDiv">
-        <img src="images/devmanage_main.png" alt="">
+        <img src="images/devmanage_main.png" style="height: 690px; width: 782px;" alt="">
         <!-- <object id="renderControl" type="application/x-cm-3d8" style="height: 890px; width: 782px;"></object>		 -->
     </div>
-    <div id="animatedModal">      
+    <div id="animatedModal">
         <div class="modal-content">
             <ul>
                 <li class="password-update-title">修改密码</li>
@@ -167,8 +163,15 @@
     <script src="js/main/energyenviroment4enviroment.js"></script>              <!-- 环境管理-->
     <script src="js/main/labourdev4person.js"></script>                         <!-- 人员管理-->
     <script src="js/main/labourdev4entranceguard.js"></script>                  <!-- 实名制门禁-->
+    <script src="js/main/informationdev4file.js"></script>                      <!-- 文件管理-->
     <script type="text/javascript" src="webgis_3d/js/citymaker/cm7.js"></script>
     <script type="text/javascript" src="webgis_3d/js/map3d.js"></script>
-    <script src="js/animatedModal.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (!$.cookie("uid")){
+                $(window).attr('location',$$.baseUrl + $$.moduleUrls.loginFailure);
+            }
+        });
+    </script>
 </body>
 </html>

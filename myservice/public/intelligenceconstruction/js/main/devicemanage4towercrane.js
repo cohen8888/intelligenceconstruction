@@ -6,8 +6,8 @@
 
  (function(){
 
-    let cacheData = {};
-    let seriesData = [];
+    let cacheData = {};                                 //缓存数据
+    let seriesData = [];                                        
     /**
      * 渲染塔吊图形
      * 
@@ -131,7 +131,6 @@
         }
     }
 
-
     /**
      * 渲染塔吊基本信息
      */
@@ -139,7 +138,7 @@
         let str = "";
         if (typeof data == 'object' && data instanceof Array && data.length > 0 ){
             for(let i = 0; i < data.length; i++){
-                cacheData[data[i]['name']] = item;
+                cacheData[data[i]['name']] = data[i];
                 str += '<tr data-name="' + data[i]['name'] + '">';
                 str += '<td>' + data[i]['name'] + '</td>';
                 str += '<td>' + data[i]['model'] + '</td>';
@@ -154,38 +153,41 @@
     }
 
     $$.moduleDevicemanageTowercrane = function(){
-        
         function handler(data){
+            let towercraneData = data.data;
             let mychart = echarts.init($('#towercrane-chart').get(0));
-            renderTowercrane(mychart, data.data.towerCraneInfo);
-            renderTowerCraneTableInfo($('.tower-crane-table .table tbody'), data.data.towerCraneInfo);
+            renderTowercrane(mychart, towercraneData.liftInfo);
+            
+            renderTowerCraneTableInfo($('.tower-crane-table .table tbody'), towercraneData.liftInfo);
+
             $('.tower-crane-table table').on('mouseover', function(event){
-            let key = event.target.parentNode.getAttribute('data-name');
-            if (key){
-                let str = "";
-                //str += '<div class="popup-message">';
-                str += '<ul>';
-                str += '<li class="popup-title">基本信息</li>';
-                str += '<li><span>名称：</span><span>'+cacheData[key]['name']+'</span></li>';
-                str += '<li><span>型号/规格：</span><span>'+cacheData[key]['model']+'</span></li>';
-                str += '<li><span>厂家：</span><span>'+cacheData[key]['manufacturer']+'</span></li>';
-                str += '<li><span>联系人：</span><span>'+cacheData[key]['linker']+'</span></li>';
-                str += '<li><span>联系电话：</span><span>'+cacheData[key]['linkerPhone']+'</span></li>';
-                str += '<li class="popup-title">巡检记录</li>';
-                str += '<li><span>检查时间：</span><span>'+cacheData[key]['checkDate']+'</span></li>';
-                str += '<li><span>检查人：</span><span>'+cacheData[key]['checkUser']+'</span></li>';
-                str += '</ul>';
-                //str += '</div>';
-                $('.popup-message ul').remove();
-                $('.popup-message').append($(str));
-                $('.popup-message').css('display', 'block');
+                let key = event.target.parentNode.getAttribute('data-name');
+                if (key){
+                    let str = "";
+                    //str += '<div class="popup-message">';
+                    str += '<ul>';
+                    str += '<li class="popup-title">基本信息</li>';
+                    str += '<li><span>名称：</span><span>'+cacheData[key]['name']+'</span></li>';
+                    str += '<li><span>型号/规格：</span><span>'+cacheData[key]['model']+'</span></li>';
+                    str += '<li><span>厂家：</span><span>'+cacheData[key]['manufacturer']+'</span></li>';
+                    str += '<li><span>联系人：</span><span>'+cacheData[key]['linker']+'</span></li>';
+                    str += '<li><span>联系电话：</span><span>'+cacheData[key]['linkerPhone']+'</span></li>';
+                    str += '<li class="popup-title">巡检记录</li>';
+                    str += '<li><span>检查时间：</span><span>'+cacheData[key]['checkDate']+'</span></li>';
+                    str += '<li><span>检查人：</span><span>'+cacheData[key]['checkUser']+'</span></li>';
+                    str += '</ul>';
+                    //str += '</div>';
+                    $('.popup-message ul').remove();
+                    $('.popup-message').append($(str));
+                    $('.popup-message').css('display', 'block');
                 }
-                });
-                $('.tower-crane-table table').on('mouseout', function(event){
+            });
+            $('.tower-crane-table table').on('mouseout', function(event){
                 $(".devicemanage-towercrane .popup-message").css('display', 'none');
             });
         }
-        $$.ajax($$.baseUrl, $$.moduleUrls.devicemanage4towercrane, handler);
+
+        $$.ajax($$.baseUrl, $$.moduleUrls.getAllTowerInfo, handler);
     }
 
 })()

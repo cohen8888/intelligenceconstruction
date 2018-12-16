@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/default.css"/>
+	</head>
+	<body >
+		<div class="wrap">
+			<div class="nav-box">
+				<div class="nav nav-scale">
+					<div class="nav-mask">
+						<img src="img/images/start_ico01.png"/>
+						<p class="nav-title">设计管理平台</p>
+					</div>
+				</div>
+				<div class="nav-2 nav-scale">
+					<div class="nav-mask">
+						<img src="img/images/start_ico02.png"/>
+						<p class="nav-title">智慧工地平台</p>
+					</div>
+				</div>
+				<div class="nav-3 nav-scale">
+					<div class="nav-mask">
+						<img src="img/images/start_ico03.png"/>
+						<p class="nav-title">智慧校园平台</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/lib/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("div.nav-scale").click(function(){
+			if($(this).attr("data-scale")!=1){
+				$(this).css({"transform": "scale(1.35)"}).attr("data-scale",1).siblings().css({transform: "scale(1)"}).attr("data-scale",0).children("div.nav-mask").css({"background-color":""});
+				$(this).children("div.nav-mask").css({"background-color":"rgba(40,67,123,0.95)"});
+			}else{
+				$(this).css({"transform": "scale(1)"}).attr("data-scale",0);
+				$(this).children("div.nav-mask").css({"background-color":""});
+			}
+		});	
+		$(".nav-2").click(function(){
+			location.href = "toLogin.html";
+		})
+	</script>
+</html>

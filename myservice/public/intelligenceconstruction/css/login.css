@@ -1,0 +1,65 @@
+center {
+	margin: 11% auto;
+	width: 25%;
+}
+center>h1 {
+	color: white;
+	font-size: 60px;
+	font-weight: 300;
+	text-align: left;
+}
+#toLogin {
+	width: 430px;
+	height: 66px;
+	border-radius: 30px;
+	margin-top: 85px;
+	border: 0;
+	background: linear-gradient(to right, #0067ac 10%, #143371);
+	color: white;
+	font-size: 25px;
+}
+.entry{
+	text-align: left;
+	border-bottom: 1px solid #202e3f;
+	padding: 30px 0 15px 0;
+}
+.entry>label{
+}
+.username-title,.pwd-title{
+	color: #aaa;
+	font-size: 18px;
+	visibility: hidden;
+}
+#userName,#pwd {
+	background: rgba(0, 0, 0, 0);
+	border:rgba(0, 0, 0, 0);
+	width: 70%;
+	height: 30px;
+	color: white;
+	font-size: 18px;
+}
+input::-webkit-input-placeholder{
+	color: white;
+	font-size: 18px;
+}
+.entry-checkbox{
+	text-align: left;
+	padding-top: 15px;
+}
+.entry-checkbox>label{
+	color: #aaa;
+	font-size: 18px;
+	line-height: 25px;
+}			
+input[type=checkbox]{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 5px;
+	color: red;
+}
+.username-prompt,.pwd-prompt{
+	color: red;
+	font-size: 14px;
+	padding: 10px;
+}

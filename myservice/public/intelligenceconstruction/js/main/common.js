@@ -3,110 +3,115 @@
  *  author：Cohen.Lee
  *  date：2018-11-12
  */
-    (function(){
-        let baseUrl = "http://localhost:3000";
-        let moduleUrls = {
-            "home":"/api/home",
-            "globalprogress":"/api/globalprogress",                                         //总体进度
-            "planschedule":"/api/planschedule",                                             //计划进度
-            "projectprogress4milestone":"/api/projectprogress4milestone",                   //里程碑进度
-            "projectprogress4comparison":"/api/projectprogress4comparison",                 //进度对比
-            "quality4problemsummarizing":"/api/quality4problemsummarizing",                 //问题汇总
-            "quality4pollingcheck":"/api/quality4pollingcheck",                             //质量巡检
-            "quality4craft":"/api/quality4craft",                                           //重点工艺
-            "safety4pollingcheck":"/api/safety4pollingcheck",                               //问题汇总
-            "safety4fireprotection":"/api/safety4fireprotection",                           //消防管理
-            "devicemanage4towercrane":"/api/devicemanage4towercrane",                       //塔吊
-            "devicemanage4lift":"/api/devicemanage4lift",                                   //升降机
-            "labourdev4person":"/api/labourdev4person",                                     //人员管理
-            "labourdev4entranceguard":"/api/labourdev4entranceguard",                       //实名制门禁
-            "energyenviroment4energy":"/api/energyenviroment4energy",                       //能源管理
-            "energyenviroment4enviroment":"/api/energyenviroment4enviroment",               //环境管理
-        };
+(function(){
+  let baseUrl = "http://localhost:3000";
+  let moduleUrls = {
+      "overview":"/api/projectinfooverviews",                                         //总览
+      "home":"/api/home",
+      "globalprogress":"/api/globalprogress",                                         //总体进度
+      "planschedule":"/api/planschedule",                                             //计划进度
+      "projectprogress4milestone":"/api/projectprogress4milestone",                   //里程碑进度
+      "projectprogress4comparison":"/api/projectprogress4comparison",                 //进度对比
+      "quality4problemsummarizing":"/api/quality4problemsummarizing",                 //问题汇总
+      "quality4pollingcheck":"/api/quality4pollingcheck",                             //质量巡检
+      "quality4craft":"/api/quality4craft",                                           //重点工艺
+      "safety4pollingcheck":"/api/safety4pollingcheck",                               //问题汇总
+      "safety4fireprotection":"/api/safety4fireprotection",                           //消防管理
+      // "devicemanage4towercrane":"/api/devicemanage4towercrane",                       //塔吊
+      // "devicemanage4lift":"/api/devicemanage4lift",                                   //升降机
+      "getAllElevatorInfo":"/api/getAllElevatorInfo",                                 //升降机
+      "getAllTowerInfo":"/api/getAllTowerInfo",                                       //塔吊
+      "labourdev4person":"/api/labourdev4person",                                     //人员管理
+      //"getAllPeopleInfo":"/api/getAllPeopleInfo",                                     //人员管理中工人实时信息
+      //"getAllWorkerNum":"/api/getAllWorkerNum",                                       //获取全部人员在场数据以及工种分类的人员在场数据
+      "labourdev4entranceguard":"/api/labourdev4entranceguard",                       //实名制门禁
+      "energyenviroment4energy":"/api/energyenviroment4energy",                       //能源管理
+      "energyenviroment4enviroment":"/api/energyenviroment4enviroment",               //环境管理
+      "login":"/login",
+      "loginSuccess":"/intelligenceconstruction/overview.html",
+      "loginFailure":"/intelligenceconstruction/login.html",
+      "index":"/intelligenceconstruction/index.html",
+  };
 
-        /**
-        * 异步ajax获取数据的方法
-        */
-        // function ajax(baseUrl,file){
-        //     return new Promise((resolve,reject)=>{
-        //         let xhr = new XMLHttpRequest();
-        //         let url = !file ? baseUrl :  baseUrl + file;
-        //         xhr.open("get" ,url ,true);
-        //         xhr.send();
-        //         xhr.onreadystatechange = function(){
-        //             if(xhr.readyState == 4){
-        //                 if(xhr.status == 200){
-        //                     resolve(JSON.parse(xhr.responseText));
-        //                 }else{
-        //                     reject(xhr.status);
-        //                 }
-        //             }
-        //         }
-        //     })
-        // }
-        function ajax(baseUrl,file, fn){
-            let xhr = new XMLHttpRequest();
-            let url = !file ? baseUrl :  baseUrl + file;
-            xhr.open("get" ,url ,true);
-            xhr.send();
-            xhr.onreadystatechange = function(){
-                if(xhr.readyState == 4){
-                    if(xhr.status == 200){
-                       fn(JSON.parse(xhr.responseText));
-                    }
-                }
-            }
-        }
-        
+  /**
+  * 异步ajax获取数据的方法
+  */
+  // function ajax(baseUrl,file){
+  //     return new Promise((resolve,reject)=>{
+  //         let xhr = new XMLHttpRequest();
+  //         let url = !file ? baseUrl :  baseUrl + file;
+  //         xhr.open("get" ,url ,true);
+  //         xhr.send();
+  //         xhr.onreadystatechange = function(){
+  //             if(xhr.readyState == 4){
+  //                 if(xhr.status == 200){
+  //                     resolve(JSON.parse(xhr.responseText));
+  //                 }else{
+  //                     reject(xhr.status);
+  //                 }
+  //             }
+  //         }
+  //     })
+  // }
+  function ajax(baseUrl,file, fn){
+      let xhr = new XMLHttpRequest();
+      let url = !file ? baseUrl :  baseUrl + file;
+      xhr.open("get" ,url ,true);
+      xhr.send();
+      xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4){
+              if(xhr.status == 200){
+                  fn(JSON.parse(xhr.responseText));
+              }
+          }
+      }
+  }
+  window.$$ = {};
+  window.$$.baseUrl = baseUrl;
+  window.$$.moduleUrls = moduleUrls;
+  window.$$.ajax = ajax;
 
 
+  //---------------------------------------------------
+  // 日期格式化
+  // 格式 YYYY/yyyy/YY/yy 表示年份
+  // MM/M 月份
+  // W/w 星期
+  // dd/DD/d/D 日期
+  // hh/HH/h/H 时间
+  // mm/m 分钟
+  // ss/SS/s/S 秒
+  //---------------------------------------------------
+  Date.prototype.Format = function(formatStr){
+      var str = formatStr;
+      var Week = ['日','一','二','三','四','五','六'];
+      
+      str=str.replace(/yyyy|YYYY/,this.getFullYear());
+      str=str.replace(/yy|YY/,(this.getYear() % 100)>9?(this.getYear() % 100).toString():'0' + (this.getYear() % 100));
+      
+      str=str.replace(/MM/,this.getMonth() >= 9 ? (this.getMonth() + 1): '0' + (this.getMonth() + 1));
+      str=str.replace(/M/g,this.getMonth() + 1);
+      
+      str=str.replace(/w|W/g,Week[this.getDay()]);
+      
+      str=str.replace(/dd|DD/,this.getDate()>9?this.getDate().toString():'0' + this.getDate());
+      str=str.replace(/d|D/g,this.getDate());
+      
+      str=str.replace(/hh|HH/,this.getHours()>9?this.getHours().toString():'0' + this.getHours());
+      str=str.replace(/h|H/g,this.getHours());
+      str=str.replace(/mm/,this.getMinutes()>9?this.getMinutes().toString():'0' + this.getMinutes());
+      str=str.replace(/m/g,this.getMinutes());
+      
+      str=str.replace(/ss|SS/,this.getSeconds()>9?this.getSeconds().toString():'0' + this.getSeconds());
+      str=str.replace(/s|S/g,this.getSeconds());
+      
+      return str;
+  }
 
-        window.$$ = {};
-        window.$$.baseUrl = baseUrl;
-        window.$$.moduleUrls = moduleUrls;
-        window.$$.ajax = ajax;
-
-
-        //---------------------------------------------------
-    // 日期格式化
-    // 格式 YYYY/yyyy/YY/yy 表示年份
-    // MM/M 月份
-    // W/w 星期
-    // dd/DD/d/D 日期
-    // hh/HH/h/H 时间
-    // mm/m 分钟
-    // ss/SS/s/S 秒
-    //---------------------------------------------------
-    Date.prototype.Format = function(formatStr){
-        var str = formatStr;
-        var Week = ['日','一','二','三','四','五','六'];
-        
-        str=str.replace(/yyyy|YYYY/,this.getFullYear());
-        str=str.replace(/yy|YY/,(this.getYear() % 100)>9?(this.getYear() % 100).toString():'0' + (this.getYear() % 100));
-        
-        str=str.replace(/MM/,this.getMonth() >= 9 ? (this.getMonth() + 1): '0' + (this.getMonth() + 1));
-        str=str.replace(/M/g,this.getMonth() + 1);
-        
-        str=str.replace(/w|W/g,Week[this.getDay()]);
-        
-        str=str.replace(/dd|DD/,this.getDate()>9?this.getDate().toString():'0' + this.getDate());
-        str=str.replace(/d|D/g,this.getDate());
-        
-        str=str.replace(/hh|HH/,this.getHours()>9?this.getHours().toString():'0' + this.getHours());
-        str=str.replace(/h|H/g,this.getHours());
-        str=str.replace(/mm/,this.getMinutes()>9?this.getMinutes().toString():'0' + this.getMinutes());
-        str=str.replace(/m/g,this.getMinutes());
-        
-        str=str.replace(/ss|SS/,this.getSeconds()>9?this.getSeconds().toString():'0' + this.getSeconds());
-        str=str.replace(/s|S/g,this.getSeconds());
-        
-        return str;
-    }
-
-    //+---------------------------------------------------
-//| 求两个时间的天数差 日期格式为 YYYY-MM-dd
-//+---------------------------------------------------
-function daysBetween(DateOne, DateTwo){
+  //+---------------------------------------------------
+  //| 求两个时间的天数差 日期格式为 YYYY-MM-dd
+  //+---------------------------------------------------
+  function daysBetween(DateOne, DateTwo){
     var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));
     var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);
     var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));
@@ -272,26 +277,38 @@ function daysBetween(DateOne, DateTwo){
   }
 
   $$.StringToDate = StringToDate;
-})();
+
 
     var btn_cc = 'btn-primary';
     var navbar_cc = 'cm-navbar-primary';
-	var pageArr = ["html/home.html", "", "html/projectprogress4global.html", "html/projectprogress4milestone.html",
-					"html/projectprogress4plan.html","html/projectprogress4comparison.html","",
-					"html/quality4problemsummarizing.html","html/quality4pollingcheck.html","html/quality4craft.html","",
-					"html/safety4pollingcheck.html","html/safety4videomonitoring.html","html/safety4fireprotection.html",
-					"html/safety4monitoring.html","","html/devicemanage4towercrane.html","html/devicemanage4lift.html","",
-					"html/energyenviroment4energy.html","html/energyenviroment4enviroment.html","","html/labourdev4person.html",
-					"html/labourdev4entranceguard.html","","html/informationdev4file.html","html/informationdev4repository.html",
-					"html/setting.html"
-				];
-	$("#cm-menu-scroller a").on("click", function(event){
-		let e = window.event || event;
-		if(pageArr[$("#cm-menu-scroller a").index(e.target)] != ''){
-			$('.cm-menu-items li').removeClass('active');
-			$('.cm-submenu li').removeClass('active');
+    var pageArr = ["html/home.html", "", "html/projectprogress4global.html", "html/projectprogress4milestone.html",
+          "html/projectprogress4plan.html","html/projectprogress4comparison.html","",
+          "html/quality4problemsummarizing.html","html/quality4pollingcheck.html","html/quality4craft.html","",
+          "html/safety4pollingcheck.html","html/safety4videomonitoring.html","html/safety4fireprotection.html",
+          "html/safety4monitoring.html","","html/devicemanage4towercrane.html","html/devicemanage4lift.html","",
+          "html/energyenviroment4energy.html","html/energyenviroment4enviroment.html","","html/labourdev4person.html",
+          "html/labourdev4entranceguard.html","","html/informationdev4file.html","html/informationdev4repository.html",
+          "html/setting.html"
+        ];
+    $("#cm-menu-scroller a").on("click", function(event){
+    let e = window.event || event;
+    if(pageArr[$("#cm-menu-scroller a").index(e.target)] != ''){
+      $('.cm-menu-items li').removeClass('active');
+      $('.cm-submenu li').removeClass('active');
             this.parentNode.setAttribute('class', 'active');
             //$(this).attr('class', 'selected');
-			$("#global .container-fluid").load(pageArr[$("#cm-menu-scroller a").index(e.target)]);
-		}
-	});
+      $("#global .container-fluid").load(pageArr[$("#cm-menu-scroller a").index(e.target)]);
+    }
+    });
+    
+    
+    function timingDate(){
+      let currentDate = new Date().Format('yyyy年MM月DD日 HH:mm:ss 星期w').toString();
+      $('.current-date').html(currentDate);
+      setTimeout(timingDate, 1000);
+    }
+    timingDate();
+})();
+
+ 
+

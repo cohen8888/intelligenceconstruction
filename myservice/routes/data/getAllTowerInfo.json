@@ -1,0 +1,29 @@
+{
+    "liftInfo": [
+        {
+            "linker": "张三123",
+            "id": 1,
+            "model": "10001",
+            "linkerPhone": "18518011100",
+            "checkUser": "李四",
+            "manufacturer": "东北机械厂1",
+            "name": "塔吊11086",
+            "state": "及格",
+            "checkDate": "2018-11-10 00:00:00",
+            "type": 0,
+            "deviceId": 1
+        },{
+            "linker": "张三123",
+            "id": 2,
+            "model": "10002",
+            "linkerPhone": "18518011100",
+            "checkUser": "李四",
+            "manufacturer": "东北机械厂1",
+            "name": "塔吊11087",
+            "state": "及格",
+            "checkDate": "2018-11-10 00:00:00",
+            "type": 0,
+            "deviceId": 2
+        }
+    ]
+}

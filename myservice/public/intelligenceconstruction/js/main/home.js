@@ -25,6 +25,7 @@
 			$('.prj-data-info').get(5).innerHTML = dataObj.nose;
 			$('.prj-data-info').get(6).innerHTML = dataObj.windPower;
 		}
+		
 		$$.ajax($$.baseUrl, $$.moduleUrls.home, handler);
 
 	}

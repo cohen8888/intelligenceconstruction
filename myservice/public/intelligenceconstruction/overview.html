@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap-clearmin.css">
+	    <link rel="stylesheet" type="text/css" href="css/roboto.css">
+		<link rel="stylesheet" type="text/css" href="css/overview.css"/>
+	    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div > 
+				<img src="images/logo.svg"/>
+			</div>
+			<header>
+				<nav class="cm-navbar cm-navbar-primary ">
+					<div class="cm-flex">
+						<h1>广西柳州建工技校基地</h1>
+					</div>
+					<div class="pull-right current-date">
+						<span>2018年11月05日</span><span>14:01:00</span><span>星期一</span>
+					</div>
+					<div class="pull-right weather">
+						<img src="images/weather4sunny.png" alt="">
+					</div>
+					<div class="pull-right usersign">
+						<img src="images/user4sign.png" alt="">
+						<span>138****8888</span>
+					</div>
+				</nav>
+			</header>
+			<section>
+				<div class="box"> 
+					<div class="links">
+						<div class="linksBox box-1" >
+							<div class="link-mask projectInfo">
+								<img src="img/images/overview_ico01.png"/>
+								<p class="links-title">项目概况</p>
+								<p class="links-item links-item-self"><span>项目名称:</span><span class="item-name-adr projectInfo-name">广西建工建筑安装技工学校柳州新校区</span></p>
+								<p class="links-item links-item-self"><span>项目地址:</span><span class="item-name-adr projectInfo-address">柳州市柳东新区</span></p>
+							</div>
+						</div>
+						<div class="linksBox box-2" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico02.png"/>
+								<p class="links-title">进度管理</p>
+								<p class="links-item"><span>总施工时间:</span><span class="plan-maxDay">290天</span></p>
+								<p class="links-item"><span>已施工时间:</span><span class="plan-workDay">30天</span></p>
+							</div>
+						</div>
+						<div class="linksBox box-3" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico03.png"/>
+								<p class="links-title">质量管理</p>
+								<p class="links-item"><span>质量问题:</span><span class="qualityInfo-count">10个</span></p>
+								<p class="links-item"><span>待处理:</span><span class="qualityInfo-unfinsih">3个</span></p>
+							</div>
+						</div>
+						<div class="linksBox box-4" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico04.png"/>
+								<p class="links-title">安全管理</p>
+								<p class="links-item"><span>安全问题:</span><span class="safeInfo-count">10个</span></p>
+								<p class="links-item"><span>待处理:</span><span class="safeInfo-unfinsih">3个</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="links">
+						<div class="linksBox box-5" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico05.png"/>
+								<p class="links-title">设备管理</p>
+								<p class="links-item"><span>设备数量:</span><span class="deviceInfo-count">5个</span></p>
+								<p class="links-item"><span>待处理:</span><span class="deviceInfo-unfinsih">0个</span></p>
+							</div>
+						</div>
+						<div class="linksBox box-6" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico06.png"/>
+								<p class="links-title">能源环境管理</p>
+								<p class="links-item"><span>总用水/总用电:</span><span class="energyInfo"></span></p>
+								<p class="links-item"><span>环境评价:</span><span  class="energyInfo-status"></span></p>
+							</div>
+						</div>
+						<div class="linksBox box-7" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico07.png"/>
+								<p class="links-title">劳务实名制管理</p>
+								<p class="links-item"><span>现场总人数:</span><span class="workerInfo-count">400人</span></p>
+								<p class="links-item"><span>今日人数:</span><span class="workerInfo-todayCount">200人</span></p>
+							</div>
+						</div>
+						<div class="linksBox box-8" >
+							<div class="link-mask">
+								<img src="img/images/overview_ico08.png"/>
+								<p class="links-title">资料管理</p>
+								<p class="links-item"><span>文件数量:</span><span class="fileInfo">1000个</span></p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+		</div>
+		<script src="js/lib/jquery-2.1.3.min.js"></script>
+		<script src="js/jquery.cookie.min.js"></script>
+		<script src="js/main/common.js"></script>
+		<script>
+			$(document).ready(function () {
+				if (!$.cookie("uid")){
+					$(window).attr('location',$$.baseUrl + $$.moduleUrls.loginFailure);
+				}
+				$('.usersign span').html($.cookie("uid"));
+				$$.ajax($$.baseUrl, $$.moduleUrls.overview, handler);
+				function handler(data){
+					$('.projectInfo-name').html(data.data.projectInfo.name);
+					$('.projectInfo-address').html(data.data.projectInfo.address);
+					$('.plan-maxDay').html(data.data.plan.maxDay);
+					$('.plan-workDay').html(data.data.plan.workDay);
+					$('.qualityInfo-count').html(data.data.qualityInfo.count);
+					$('.qualityInfo-unfinsih').html(data.data.qualityInfo.unfinsih);
+					$('.safeInfo-count').html(data.data.safeInfo.count);
+					$('.safeInfo-unfinsih').html(data.data.safeInfo.unfinsih);
+					$('.deviceInfo-count').html(data.data.deviceInfo.count);
+					$('.deviceInfo-unfinsih').html(data.data.deviceInfo.unfinish);
+					$('.energyInfo').html(data.data.energyInfo.electricinfo + '/' + data.data.energyInfo.waterinfo);
+					$('.energyInfo-status').html(data.data.energyInfo.status);
+					$('.energyInfo-status').html(data.data.energyInfo.status);
+					$('.workerInfo-count').html(data.data.workerInfo.count);
+					$('.workerInfo-todayCount').html(data.data.workerInfo.todayCount);
+					$('.fileInfo').html(data.data.fileInfo.countFiles);
+				}
+				$('.link-mask').on('click', function(){
+					$(window).attr('location',$$.baseUrl + $$.moduleUrls.index);
+				});
+
+			});
+		</script>
+	</body>
+	
+</html>

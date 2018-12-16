@@ -5,37 +5,42 @@
     },
     "workerInfos":[
         {
-            "workNo":"w00011",
-            "name":"张大穆",
-            "gender":"男",
-            "company":"刘记建筑公司",
-            "imgUrl":""
+            "imgUrl": "/attachment/worker/photo/袁林.png",
+            "company": "赵仁江混凝土工班",
+            "name": "袁林",
+            "gender": "0",
+            "workNo": "6049000001919453",
+            "numNo": "6049000002435956"
         },
         {
             "workNo":"w00011",
+            "numNo": "6049000002435942",
             "name":"李慕深",
-            "gender":"男",
+            "gender":"0",
             "company":"刘记建筑公司",
             "imgUrl":""
         },
         {
             "workNo":"w00011",
+            "numNo": "6049000002435941",
             "name":"王适才",
-            "gender":"男",
+            "gender":"0",
             "company":"李蟒记建筑公司",
             "imgUrl":""
         },
         {
             "workNo":"w00011",
+            "numNo": "6049000002435958",
             "name":"张大穆",
-            "gender":"男",
+            "gender":"0",
             "company":"刘记建筑公司",
             "imgUrl":""
         },
         {
             "workNo":"w00011",
+            "numNo": "6049000002435957",
             "name":"张大穆",
-            "gender":"男",
+            "gender":"0",
             "company":"刘记建筑公司",
             "imgUrl":""
         }

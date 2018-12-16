@@ -1,0 +1,34 @@
+{
+    "safeInfo": {
+        "unfinsih": 24,
+        "count": 89
+    },
+    "plan": {
+        "maxDay": 375,
+        "workDay": 165
+    },
+    "workerInfo": {
+        "todayCount": 122,
+        "count": 178
+    },
+    "energyInfo": {
+        "electricinfo": "99999",
+        "waterinfo": "12.9",
+        "status": "良好"
+    },
+    "projectInfo": {
+        "address": "柳州市柳东新校区",
+        "name": "广西建工建筑安装技工学校柳州新校区"
+    },
+    "deviceInfo": {
+        "count": 10,
+        "unfinish":2
+    },
+    "fileInfo": {
+        "countFiles": 4
+    },
+    "qualityInfo": {
+        "unfinsih": 6,
+        "count": 24
+    }
+}

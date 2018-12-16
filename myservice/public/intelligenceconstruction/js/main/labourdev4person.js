@@ -118,3 +118,21 @@
     }
 
 })()
+
+
+// $$.moduleLabourdevPerson = function () {
+//     function handlerAllWorkerNum(data) {
+//         let mychart = echarts.init($('#person-info').get(0));
+//         console.log(data.data.AllWorkerTypeNumList);
+//         generatePersonChart(mychart, data.data.localeWorkerDistribution);
+//         //$('#currentWorker').html(data.data.globalInfo.currentWorker);
+//         //$('#grandTotalWorker').html(data.data.globalInfo.grandTotalWorker);
+//     }
+
+//     function handlerPeopleInfo(data) {
+//         renderTableInfo($('.labourdev-person-info .table tbody'), data.data);
+//     }
+
+//     $$.ajax($$.baseUrl, $$.moduleUrls.getAllPeopleInfo, handlerPeopleInfo);
+//     $$.ajax($$.baseUrl, $$.moduleUrls.getAllWorkerNum, handlerAllWorkerNum);
+// }
