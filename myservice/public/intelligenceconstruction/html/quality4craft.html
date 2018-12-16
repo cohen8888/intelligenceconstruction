@@ -1,26 +1,61 @@
 <!-- 质量管理——重点工艺 -->
-
+<style>
+</style>
 <div class="row quality-craft">
 	<div class="col-sm-8">
-        <div class="panel-heading title">
-            <div class="text-left">重点工艺</div>
-        </div>
-        <div class="panel-body">
-            <img src="images/quality_craft_main.jpg" style="width: 100%;height: 100%;" />
-        </div>
+		<div class="panel-heading title">
+			<div class="text-left">重点工艺</div>
+		</div>
+		<div class="panel-body">
+			<img src="images/quality_craft_main.jpg" style="width: 100%;height: 100%;" />
+		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="panel panel-default quality-craft-info">
 			<div class="panel-heading title">
 				<div class="text-left">问题目录</div>
+				<div class="text-right">
+					<button>添加</button>
+				</div>
 			</div>
 			<div class="panel-body">
+			</div>
+		</div>
+		<div class="panel panel-default quality-craft-info-add">
+			<div class="panel-heading title">
+				<div class="text-left">塔吊信息：</div>
+			</div>
+			<div class="panel-body">
+				<ul class="quality-craft-forminfo">
+					<li><span>所属区域：</span><span><input class="quality-craft-info-input" name="areaInfo" type="text"></span></li>
+					<li><span>问题描述：</span><span><input class="quality-craft-info-input" name="problemInfo" type="text"></span></li>
+					<li><span>检查人：</span><span><input class="quality-craft-info-input" name="checkPeople" type="text"></span></li>
+					<li><span>检查时间：</span><span><input class="quality-craft-info-input" name="checkTime" type="text"></span></li>
+					<li><span>整改要求：</span><span><input class="quality-craft-info-input" name="rectifyInfo" type="text"></span></li>
+					<li><span>整改人：</span><span><input class="quality-craft-info-input" name="rectifyPeople" type="text"></span></li>
+					<li><span>整改时间：</span><span><input class="quality-craft-info-input" name="rectifyTime" type="text"></span></li>
+					<li><span>状态：</span><span><input name="status" type="radio" value="0" checked />待整改<input name="status" type="radio"
+							 value="1" />已整改</span></li>
+					<li><span>是否合格：</span><span><input name="resultInfo" type="radio" value="0" checked />合格<input name="resultInfo"
+							 type="radio" value="1" />不合格</span></li>
+					<li><span>整改前图片：</span><span><input class="quality-craft-info-input" name="problemUrl" type="text"></span></li>
+					<li><span>整改后图片：</span><span><input class="quality-craft-info-input" name="rectifyUrl" type="text"></span></li>
+					<li><span><button>确定</button></span><span><button>退出</button></span></li>
+				</ul>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
+	$(".quality-craft-info .panel-heading button").on('click', function () {
+		$('.quality-craft-info').css('display', 'none');
+		$('.quality-craft-info-add').css('display', 'block');
+	});
+	$(".quality-craft-info-add .panel-body button:last-child").on('click', function () {
+		$('.quality-craft-info').css('display', 'block');
+		$('.quality-craft-info-add').css('display', 'none');
+	});
 	$$.moduleQualityCraft();
-	$('#gisDiv').css('position', 'absolute').css('left', '240px').css('top','160px');
+	$('#gisDiv').css('position', 'absolute').css('left', '240px').css('top', '160px');
 	$('#gisDiv #renderControl').css('width', '1083px').css('height', '890px');
 </script>

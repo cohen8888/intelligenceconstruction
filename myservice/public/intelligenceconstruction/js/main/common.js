@@ -16,6 +16,7 @@
       "quality4pollingcheck":"/api/quality4pollingcheck",                             //质量巡检
       "quality4craft":"/api/quality4craft",                                           //重点工艺
       "safety4pollingcheck":"/api/safety4pollingcheck",                               //问题汇总
+      "getSafeInfo": "/api/getSafeInfo",                                              //巡检问题
       "safety4fireprotection":"/api/safety4fireprotection",                           //消防管理
       // "devicemanage4towercrane":"/api/devicemanage4towercrane",                       //塔吊
       // "devicemanage4lift":"/api/devicemanage4lift",                                   //升降机

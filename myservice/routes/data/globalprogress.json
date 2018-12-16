@@ -29,19 +29,19 @@
         {
             "orderNo":"01",
             "taskName":"实训楼",
-            "globalPeriod":"90天",
+            "projectPeriod": "190天",
             "completePeriod":"31天"
         },
         {
             "orderNo":"02",
             "taskName":"综合楼",
-            "globalPeriod":"90天",
+            "projectPeriod": "290天",
             "completePeriod":"30天"
         },
         {
             "orderNo":"03",
             "taskName":"学员宿舍楼",
-            "globalPeriod":"90天",
+            "projectPeriod": "390天",
             "completePeriod":"30天"
         }
     ]

@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/JQuery.JSAjaxFileUploader.css">
+
     <title>智能工地管理平台</title>
 </head>
 
@@ -141,6 +143,7 @@
     <script src="js/lib/jquery.ztree.core.js"></script>
     <script src="js/lib/jquery.ztree.excheck.js"></script>
     <script src="js/lib/jquery.ztree.exedit.js"></script>
+    <script src="js/JQuery.JSAjaxFileUploader.min.js"></script>
     <script src="js/fastclick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/clearmin.min.js"></script>
@@ -171,6 +174,7 @@
             if (!$.cookie("uid")){
                 $(window).attr('location',$$.baseUrl + $$.moduleUrls.loginFailure);
             }
+            $('.usersign span').html($.cookie("uid"));
         });
     </script>
 </body>

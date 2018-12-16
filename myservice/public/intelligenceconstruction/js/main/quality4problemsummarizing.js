@@ -101,6 +101,18 @@
     }
 
     function generateQualityProblemClassifyChart(rootChart, data){
+        let legendDatas = [];
+        let chartDatas = [];
+        
+        for (let key in data) {
+            let obj = {};
+            obj['name'] = key;
+            obj['value'] = data[key];
+            legendDatas.push(key);
+            chartDatas.push(obj);
+        }
+        
+        /*
         let datas = {
             "rebar":'钢筋',
             "foundation":'地基',
@@ -111,8 +123,7 @@
             "buildingWall":'砌体',
             "other":'其它'     
         };
-        let legendDatas = [];
-        let chartDatas = [];
+        
         for(let key in data){
             let obj = {};
             obj['name'] = datas[key];
@@ -120,6 +131,10 @@
             legendDatas.push(datas[key]);
             chartDatas.push(obj);
         }
+        */
+        console.log(data);
+        console.log(legendDatas);
+        console.log(chartDatas);
         let option = {
             title: {
                 text:'质量问题分类',

@@ -1,12 +1,53 @@
 <!-- 进度管理——总进度 -->
+<style>
+    .projectprogress-global .upload-file-group {
+        opacity: 0.95 !important;
+        background: #11121f !important;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        display: none;
+    }
+
+    .projectprogress-global .upload-file-group .upload-file-block {
+        background: #191a2d;
+        position: relative;
+        color: #ffffff;
+        z-index: 9999;
+        top: 50%;
+        left: 50%;
+        width: 664px;
+        /* 按需改变数值 */
+        height: 310px;
+        /* 按需改变数值 */
+        margin-top: -155px;
+        /* height数值的一半 */
+        margin-left: -332px;
+        /* width数值的一半 */
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        padding: 10px;
+    }
+
+    .projectprogress-global .upload-file-group .upload-file-block span{
+        display: inline-block;
+    }
+    .projectprogress-global .upload-file-group .upload-file-block span:last-child{
+        float:right;
+        cursor:pointer;
+    }
+</style>
 <div class="row projectprogress-global">
-	<div class="col-sm-9">
+    <div class="col-sm-9">
         <div class="panel-heading title">
-            <div class="text-left">总进度</div>  
-            <div class="text-right">
+            <div class="text-left">总进度</div>
+            <div class="text-right import-file">
                 <button>导入</button>
-                <input type="text" placeholder="请输入任务名称" class="qry-task">
-                <i class="icon-search"></i>
+                <!-- <i class="icon-search"></i> -->
             </div>
         </div>
         <div class="panel-body">
@@ -22,18 +63,48 @@
                 <tbody></tbody>
             </table>
         </div>
-	</div>
-	<div class="col-sm-3">
-		<div class="panel panel-default">
-			<div class="panel-heading title">
-				<div class="text-left">任务信息：</div>
-			</div>
-			<div class="panel-body task-info"></div>
-		</div>
-	</div>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-heading title">
+                <div class="text-left">任务信息：</div>
+            </div>
+            <div class="panel-body task-info"></div>
+        </div>
+    </div>
+    <div class="upload-file-group">
+        <div class="upload-file-block">
+            <div class="panel-heading title">
+                <span>
+                    上传文件
+                </span>
+                <span>
+                    <img src="img/icons/delete.png" alt="">
+                </span>
+            </div>
+            <div class="upload-body">
+                <div id="target-div1-1"></div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <script>
+    $('.import-file button').on('click', function () {
+        $('.projectprogress-global .upload-file-group').css('display', 'block');
+    })
+    $('.projectprogress-global .upload-file-group .upload-file-block span:last-child').on('click', function () {
+        $('.projectprogress-global .upload-file-group').css('display', 'none');
+    })
+    $('#target-div1-1').JSAjaxFileUploader({
+        uploadUrl: 'upload.php',
+        autoSubmit: false, //to disable auto submit
+        uploadTest: '上传',
+        inputText:'选择上传文件',
+        closeAnimationSpeed: 3000
+    });
     $$.moduleGlobalProgress();
-    $('#gisDiv').css('position', 'absolute').css('left', '-1240px').css('top','160px');
-	$('#gisDiv #renderControl').css('width', '1220px').css('height', '712px');
+    $('#gisDiv').css('position', 'absolute').css('left', '-1240px').css('top', '160px');
+    $('#gisDiv #renderControl').css('width', '1220px').css('height', '712px');
 </script>

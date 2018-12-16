@@ -282,7 +282,6 @@
 
 /* 质量管理——重点工艺 */
 
-
 .quality-craft .quality-craft-info .row {
     margin: 20px 28px 0px 15px;
     padding: 6px 4px 7px 5px; 
@@ -293,6 +292,67 @@
 }
 .quality-craft .quality-craft-infoo .info-msg{
     float:left;
+}
+.quality-craft-info .title .text-left {
+    float: left;
+}
+.quality-craft-info .title .text-right{
+    float:right;
+}
+.quality-craft-info .title .text-right>button {
+    width: 90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png')
+}
+
+.quality-craft-info-add {
+    display: none;
+    height: 819px !important;
+}
+
+.quality-craft-info-add ul {
+    padding: 0;
+}
+
+.quality-craft-info-input {
+    background: #191a2d;
+    border-radius: 3px;
+    border: 1px #8e8f9b solid;
+    padding-left: 3%;
+    height: 32px;
+    width: 80%;
+}
+
+.quality-craft-forminfo li span {
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.quality-craft-forminfo li span:first-child {
+    width: 20%;
+    text-align: right;
+}
+
+.quality-craft-forminfo li span:last-child {
+    width: 80%;
+}
+
+.quality-craft-forminfo li:last-child span {
+    width: 50%;
+}
+
+.quality-craft-forminfo li:last-child button {
+    width: 90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png');
+}
+
+.quality-craft-forminfo li:last-child span {
+    text-align: center;
 }
 
 /* 安全管理——安全巡检 */
@@ -378,6 +438,54 @@
 }
 .devicemanage-towercrane .col-sm-4 .panel-body{
     height: 419px;
+}
+
+.tower-crane-info-add {
+    display: none;
+    height: 819px !important;
+}
+
+.tower-crane-info-add ul {
+    padding: 0;
+}
+
+.towercrane-info-input {
+    background: #191a2d;
+    border-radius: 3px;
+    border: 1px #8e8f9b solid;
+    padding-left: 3%;
+    height: 32px;
+    width: 80%;
+}
+
+.tower-crane-forminfo li span {
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.tower-crane-forminfo li span:first-child {
+    width: 20%;
+    text-align: right;
+}
+
+.tower-crane-forminfo li span:last-child {
+    width: 80%;
+}
+
+.tower-crane-forminfo li:last-child span {
+    width: 50%;
+}
+
+.tower-crane-forminfo li:last-child button {
+    width: 90px;
+    height: 32px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('../images/btn_bg.png');
+}
+
+.tower-crane-forminfo li:last-child span {
+    text-align: center;
 }
 
 /* 设备管理——升降机 */

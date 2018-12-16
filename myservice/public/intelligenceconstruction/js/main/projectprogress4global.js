@@ -33,7 +33,7 @@
         if (typeof data == 'object' && data instanceof Array && data.length > 0) {
             for (var i = 0; i < data.length; i++) {
                 str += "<p><h5>" + data[i]['taskName'] + "</h5>";
-                str += "<ul><li><span>总工期：</span><span>" + data[i]['globalPeriod'] + "</span></li>";
+                str += "<ul><li><span>总工期：</span><span>" + data[i]['projectPeriod'] + "</span></li>";
                 str += "<li><span>已完成工期：</span><span>" + data[i]['completePeriod'] + "</span></li></ul></p>";
             }
         } else {

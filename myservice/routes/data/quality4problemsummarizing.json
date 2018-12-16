@@ -5,13 +5,11 @@
         "otherProblem":69
     },
     "qualityProblemClassify":{
-        "rebar":3,
-        "foundation":2,
-        "concrete":3,
-        "steelStructure":7,
-        "template":3,
-        "curtain":2,
-        "buildingWall":3,
-        "other":7
+        "资料": 1,
+        "钢筋": 5,
+        "教学楼": 1,
+        "混凝土": 1,
+        "基础": 2,
+        "综合楼": 3
     }
 }
